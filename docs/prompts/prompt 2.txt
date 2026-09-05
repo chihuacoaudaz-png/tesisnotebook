@@ -1,0 +1,59 @@
+A continuación tienes el texto del consultor estructurado y redactado como un **Prompt Directivo formal**, listo para ser entregado directamente a la IA/Gemini CLI sin alterar el fondo ni la lógica de razonamiento planteada:
+
+---
+
+```markdown
+# DIRECTRIZ TÉCNICA Y DE INVESTIGACIÓN: PLAN DE TESIS DE INGENIERÍA DE MINAS
+
+Actúa como el Investigador Principal y Especialista en Minería Subterránea e Inteligencia Artificial Agéntica. Tu objetivo es desarrollar formalmente el Plan de Tesis y la estructura metodológica con base en los siguientes lineamientos e intenciones de diseño:
+
+---
+
+### 1. INFORMACIÓN GENERAL DEL PROYECTO
+* **Título:** «SISTEMA AGÉNTICO BASADO EN INTELIGENCIA ARTIFICIAL PARA EL DISEÑO ASISTIDO DE PERFORACIÓN Y VOLADURA ORIENTADO AL CONTROL DE LA SOBREROTURA EN LABORES SUBTERRÁNEAS DE LA U.E.A. LINCUNA, 2026»
+* **Carácter del Proyecto:** Innovador (Transición de la automatización estática tradicional hacia una arquitectura agéntica inteligente con capacidad de razonamiento operativo).
+* **Unidad de Aplicación:** U.E.A. Minera Lincuna (Minería subterránea, Perú).
+
+---
+
+### 2. NÚCLEO CONCEPTUAL Y FUNCIONAL DEL AGENTE
+* **Arquitectura:** Agente inteligente especializado en el cálculo, estructuración y generación automatizada de mallas de perforación y voladura.
+* **Comprensión Físico-Matemática:** El sistema agéntico debe interpretar, procesar y ejecutar de manera determinística las formulaciones del modelo matemático de **Holmberg-Persson**.
+* **Propuesta de Valor:**
+  1. *Velocidad y Precisión:* Reducción drástica del tiempo de diseño y cálculo de mallas frente a los métodos manuales convencionales.
+  2. *Control Operativo:* Optimización de la distribución energética en el contorno para lograr una reducción directa y cuantificable de la **sobrerotura (*overbreak*)**.
+  3. *Impacto Económico:* Menor sobreexcavación, lo que se traduce directamente en ahorro de costos de sostenimiento (shotcrete), menor volumen de acarreo/limpieza y optimización del ciclo de minado.
+
+---
+
+### 3. ENFOQUE METODOLÓGICO
+* **Tipo de Metodología:** Aplicativa / Tecnológica.
+* **Orientación:** Demostrar en campo (o sobre los datos operativos de Lincuna) la relación causal directa: 
+  $$\text{Implementación del Sistema Agéntico (Holmberg)} \longrightarrow \text{Reducción de Sobrerotura} \longrightarrow \text{Optimización Económica}$$
+
+---
+
+### 4. ALCANCE DEL MARCO TEÓRICO
+Desarrolla exhaustivamente los siguientes ejes temáticos:
+1. **Minería Subterránea:** Excavación de labores de desarrollo y avance (secciones tipo baúl/D), calidad de macizo rocoso y control de inestabilidades.
+2. **Perforación y Voladura:** Mecánica de fragmentación de rocas, interacción de ondas de choque y expansión de gases, voladura controlada (precorte y recorte).
+3. **Modelos Físico-Matemáticos de Diseño:**
+   * **Modelo Base Principal:** *Holmberg–Persson* (cálculo de 5 secciones: corte en 4 cuadrantes, arrastres, ayudas y contorno).
+   * **Modelos de Validación y Contraste:** *Langefors–Kihlström* y *Modelo NTNU* (para verificar burden crítico, espaciamiento y distribución de cargas).
+4. **Inteligencia Artificial Agéntica (Agentic AI):** Fundamentación de sistemas basados en reglas físicas, toma de decisiones estructuradas, ejecución de herramientas computacionales (*Tool Calling*) y supervisión autónoma sin recurrir a cajas negras.
+
+---
+
+### 5. ESPECIFICACIÓN DE ENTREGABLES DEL SISTEMA
+* **Plan de Tesis Completo:** Estructurado rigurosamente bajo los estándares de investigación científica de ingeniería (Planteamiento del problema, Justificación cuádruple, Objetivos, Hipótesis, Operacionalización de Variables, Metodología y Matriz de Consistencia 1:1).
+* **Entregable Operativo / Técnico:** Diseño de la malla de perforación y voladura optimizada en **formato PDF**, el cual debe detallar explícitamente:
+  - Registro de todos los **parámetros de entrada (inputs)**: Geometría de la labor, propiedades geomecánicas de la roca, especificaciones del explosivo y desviaciones de perforación.
+  - Tablas de resultados con los **parámetros de salida (outputs)**: Burden, espaciamiento, tacos, longitudes de carga, concentración lineal ($kg/m$) y número de cartuchos por sección.
+  - Representación gráfica de la labor y distribución espacial de los taladros (arranque, ayudas, arrastres, corona y hastiales).
+
+---
+
+### INSTRUCCIÓN DE EJECUCIÓN:
+Procesa las fuentes documentales disponibles y genera la propuesta formal del Plan de Tesis respetando de forma íntegra las directrices expuestas, manteniendo máxima profundidad analítica, rigor matemático y correspondencia científica.
+
+```

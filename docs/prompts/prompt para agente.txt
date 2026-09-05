@@ -1,0 +1,425 @@
+# ARQUITECTURA MULTI-AGENTE AUTÓNOMA Y PORTABLE (SISTEMA PMO + RED TEAM + SKILLS DINÁMICAS)
+
+Este sistema transforma a **Gemini CLI** en una **Oficina de Gestión de Proyectos (PMO) y Laboratorio de Investigación Autónoma**. La arquitectura cuenta con:
+
+1. **Gobierno PMO y WBS:** Control estricto de hitos, compuertas de calidad (*Quality Gates*) y trazabilidad de dependencias.
+2. **Roles Especializados y Red Team:** Agentes de dominio, un **Agente Auditor** (valida forma y consistencia 1:1) y un **Agente Escéptico** (*Devil's Advocate*, busca fallas lógicas, sobrecostos ocultos y alucinaciones).
+3. **Bucle de Autocorrección Cerrado (*Self-Correction Loop*):** Ningún entregable pasa al siguiente hito sin ser auditado, cuestionado por el escéptico y refactorizado automáticamente.
+4. **Catálogo de Habilidades (*Skills*):** Scripts ejecutables en Python que el agente invoca como herramientas para cálculos físicos, geométricos y estadísticos.
+5. **Grounding y Deep Research en NotebookLM:** Protocolo de investigación profunda para alimentar el repositorio de verdad con fuentes verificadas.
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                     MASTER PMO ORCHESTRATOR (CLI CORE)                                  │
+│                                  Control de WBS, STATE.md y Quality Gates                               │
+└────────────────────────────────────────────────────┬────────────────────────────────────────────────────┘
+                                                     │
+        ┌────────────────────────────────────────────┼────────────────────────────────────────────┐
+        ▼                                            ▼                                            ▼
+┌───────────────────────────────┐  ┌──────────────────────────────────┐  ┌───────────────────────────────┐
+│     AGENTE 1: GROUNDING &     │  │       AGENTE 2: GEOMECHANICS &   │  │   AGENTE 3: ACADEMIC LEAD     │
+│       KNOWLEDGE INGESTION     │  │        PHYSICS ENGINE (HOLMBERG) │  │            WRITER             │
+│  - Parser Multimodal (.pptx,  │  │  - Motor Físico Determinístico   │  │  - Redacción Exhaustiva       │
+│    .docx, .py, .csv, .pdf)    │  │  - Skill: Auto-Tajeo Heurístico  │  │  - Prosa Enciclopédica        │
+│  - Interfaz con NotebookLM    │  │  - Verificación Pte <= UCS       │  │  - Estilo UNI FIGMM (APA 7ma) │
+└───────────────┬───────────────┘  └─────────────────┬────────────────┘  └───────────────┬───────────────┘
+                │                                    │                                   │
+                └────────────────────────────────────┼───────────────────────────────────┘
+                                                     ▼
+                                   ┌───────────────────────────────────┐
+                                   │      BORRADOR DE ENTREGABLE       │
+                                   └─────────────────┬─────────────────┘
+                                                     │
+                                                     ▼
+                                   ┌───────────────────────────────────┐
+                                   │      BUCLE DE AUTOCORRECCIÓN      │
+                                   └─────────────────┬─────────────────┘
+                                                     │
+                      ┌──────────────────────────────┴──────────────────────────────┐
+                      ▼                                                             ▼
+       ┌───────────────────────────────┐                             ┌───────────────────────────────┐
+       │      AGENTE 4: AUDITOR &      │                             │      AGENTE 5: ESCÉPTICO      │
+       │     CONSISTENCY INSPECTOR     │                             │   (RED TEAM / DEVIL'S ADV.)   │
+       │  - Matriz de Consistencia 1:1 │                             │  - Falsacionismo Popperiano   │
+       │  - Trazabilidad de Ecuaciones │                             │  - Búsqueda de Inconsistencias│
+       │  - Cero Alucinaciones         │                             │  - Detección de Sesgos        │
+       └──────────────┬────────────────┘                             └──────────────┬────────────────┘
+                      │                                                             │
+                      └──────────────────────────────┬──────────────────────────────┘
+                                                     │
+                                       ¿Aprobado por Auditor & Escéptico?
+                                                     │
+                                    ┌────────────────┴────────────────┐
+                                    │ NO                              │ SÍ
+                                    ▼                                 ▼
+                    ┌───────────────────────────────┐ ┌───────────────────────────────┐
+                    │ Refactorización y Corrección  │ │     COMPUERTA DE CALIDAD      │
+                    │ Automática por Agente Redactor│ │     (Quality Gate Aprobado)   │
+                    └───────────────────────────────┘ └───────────────┬───────────────┘
+                                                                      ▼
+                                                      Avance al Siguiente Hito WBS
+
+```
+
+---
+
+# SECCIÓN 1: Catálogo y Manifiesto de Habilidades (*Skills Registry*)
+
+El agente no "imagina" cálculos matemáticos; ejecuta herramientas (*Skills*) escritas en Python dentro de `./src/skills/`:
+
+| Skill ID | Nombre de la Habilidad | Función Operativa | Dependencias |
+| --- | --- | --- | --- |
+| **SKILL-01** | `multimodal_ingestion_skill.py` | Lee y parsea automáticamente archivos `.pptx`, `.docx`, `.pdf`, `.csv` y `.py` a Markdown estructurado sin pérdida de tablas ni datos. | `python-pptx`, `docx2txt`, `pypdf`, `pandas` |
+| **SKILL-02** | `holmberg_perimeter_engine.py` | Resuelve el modelo de Holmberg para 5 secciones, arrancando 4 cuadrantes, arrastres y corona de precorte verificando $P_{te} \le \sigma_c$. | `numpy`, `math`, `scipy` |
+| **SKILL-03** | `heuristic_auto_tajeo.py` | **Supera la limitación de pregrado:** Calcula el área remanente y posiciona automáticamente los taladros de tajeo y ayudas con relaciones $S/B = 1.25$ y $f=1.45$. | `numpy`, `shapely` |
+| **SKILL-04** | `inferential_stats_engine.py` | Ejecuta contrastes de hipótesis ($t$-Student paramétrico para 1 muestra y muestras pareadas), calcula $p$-valores, $t$-crítico y análisis de potencia estadística. | `scipy.stats`, `numpy` |
+| **SKILL-05** | `matrix_consistency_auditor.py` | Parsea el borrador del Plan de Tesis y verifica matemáticamente la correspondencia 1:1 entre Problemas, Objetivos, Hipótesis, Variables e Indicadores. | `re`, `json` |
+
+---
+
+# SECCIÓN 2: Batería de Prompts para Deep Research y NotebookLM
+
+Antes de generar los capítulos, se deben ejecutar estas 3 investigaciones profundas en la web / Google Scholar para cargar sus notas de síntesis directamente en NotebookLM y en `./docs/ground_truth/`:
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ PROMPT 1: DEEP RESEARCH EN IA AGÉNTICA DETERMINÍSTICA, SISTEMAS MULTI-AGENTE Y AUTOCORRECCIÓN         │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+"Ejecuta una investigación científica y metodológica exhaustiva sobre arquitecturas de Inteligencia Artificial 
+Agéntica Multi-Rol (Agentic AI) aplicadas a la ingeniería determinística y gestión de proyectos (PMO).
+
+Ejes obligatorios a investigar y documentar con fuentes formales (2020-2026):
+1. Patrones de razonamiento agéntico sin modelos de caja negra (Rule-based Agents, Tool Calling, ReAct y Reflexion).
+2. Arquitectura de bucle cerrado de autocorrección (Self-Correction & Refinement Loops) con roles de Red Team, 
+   Agente Auditor y Agente Escéptico (Devil's Advocate) para eliminación de alucinaciones.
+3. Model Context Protocol (MCP) y ejecución modular de habilidades (Skills determinísticas en Python).
+4. Justificación epistemológica de por qué en minería e ingeniería estructural los sistemas agénticos basados 
+   en reglas físicas y orquestación de herramientas superan en interpretabilidad y seguridad a los modelos de 
+   Machine Learning tradicionales.
+
+Genera un informe técnico estructurado con citas formales, diagramas conceptuales de flujo y taxonomía de agentes."
+
+```
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ PROMPT 2: DEEP RESEARCH EN METODOLOGÍA DE LA INVESTIGACIÓN CIENTÍFICA EN INGENIERÍA (FIGMM UNI)        │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+"Realiza una investigación exhaustiva sobre los estándares metodológicos y epistemológicos para la formulación 
+de Planes de Tesis y Proyectos de Titulación Profesional en la Facultad de Ingeniería Geológica, Minera y 
+Metalúrgica de la Universidad Nacional de Ingeniería (UNI FIGMM - Lima, Perú), tomando como referencia las 
+cátedras del Dr. Walter Barrutia Feijóo y el Dr. Guillermo Mamani Apaza.
+
+Ejes obligatorios a investigar y estructurar:
+1. El enfoque cuantitativo, nivel explicativo-causal y diseño cuasiexperimental longitudinal aplicado a minería.
+2. Formulación de la 'Realidad Problemática': diagnóstico con datos de campo, árbol de causas-efectos y brecha técnica.
+3. Axiosemántica de la investigación: Formulación del Título, Problema General y Específicos (oraciones interrogativas 
+   abiertas no dicotómicas), Objetivos con verbos de logro y no de actividad simple.
+4. Formulación condicional de Hipótesis: Identificación unívoca del Aporte del Investigador (Variable Independiente X) 
+   y la Finalidad de la Investigación (Variable Dependiente Y).
+5. Construcción rigurosa de la Matriz de Consistencia Científica: Regla de correspondencia horizontal y vertical 1:1.
+6. Criterios de delimitación espacial, temporal y justificación cuádruple: Teórica, Metodológica, Práctica y Económica.
+
+Sintetiza las normas exactas en un manual de lineamientos metodológicos estructurado en Markdown."
+
+```
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ PROMPT 3: DEEP RESEARCH EN FENOMENOLOGÍA DE SOBREROTURA, MODELO HOLMBERG Y VOLADURA DE PRECORTE       │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+"Ejecuta una investigación técnica de alto nivel en geomecánica de excavaciones subterráneas, teoría de 
+fragmentación dinámica y modelos físico-matemáticos de perforación y voladura en yacimientos polimetálicos peruanos.
+
+Ejes obligatorios a documentar con ecuaciones matemáticas completas en LaTeX y bibliografía especializada:
+1. Mecanismo de daño y sobrerotura (Overbreak): Interacción de ondas de choque compresionales (P), ondas reflejadas 
+   de tracción (S/Rayleigh), presión cuasiestática de gases de detonación y desacoplamiento energético.
+2. Voladura Controlada en labores de avance: Teoría y cálculo de Voladura de Precorte (Pre-splitting) versus Recorte 
+   amortiguado (Smooth Blasting). Relación de desacoplamiento 2:1 y condición de contorno: Presión efectiva de taladro 
+   (Pte) estrictamente menor o igual a la Resistencia a la Compresión Uniaxial de la roca (UCS).
+3. Deducción matemática integral del Modelo de Holmberg-Persson para túneles:
+   - Arranque en 4 secciones/cuadrantes: Diámetro equivalente de taladro vacío (Dv), burden crítico y taco.
+   - Restricción de concentración lineal máxima para evitar deformación plástica o sinterización de la roca.
+   - Taladros de arrastre: Ecuación de Gustafsson, factor de fijación (f = 1.45), relación S/B = 1 y ángulo de realce.
+   - Taladros de contorno (Corona y Hastiales): Cálculo de espaciamiento (Sc), burden práctico y factor de carga.
+   - Distribución espacial y geométrica de taladros de tajeo y ayudas en frentes tipo baúl (Sección D).
+4. Impacto tecno-económico de la sobrerotura en minería subterránea peruana: Consumo de sostenimiento con shotcrete 
+   (vía húmeda), dilución del mineral, horas de acarreo/limpieza (scooptramp) y tiempos de ciclo.
+
+Presenta las fórmulas completas desglosadas variable por variable con sus respectivas unidades métricas (SI)."
+
+```
+
+---
+
+# SECCIÓN 3: Estructura Portable del Proyecto en Disco
+
+Crea la siguiente carpeta en tu máquina. Todo se ejecuta mediante rutas relativas (`./`):
+
+```text
+thesis_agentic_pmo/
+│
+├── SYSTEM_PROMPT.txt                 <-- System Prompt con arquitectura PMO, Auditor y Red Team
+├── instance_config.yaml             <-- Parámetros específicos de la tesis (Lincuna 2026)
+├── STATE.md                         <-- Máquina de estados viva del PMO (Progreso y Quality Gates)
+├── AUDIT_LOG.md                     <-- Registro de objeciones del Escéptico y refactorizaciones
+│
+├── inputs/                          <-- AQUÍ ARRASTRAS TUS ARCHIVOS EN BRUTO
+│   ├── metodologia_uni.pptx         <-- Diapositivas de titulación UNI FIGMM
+│   ├── tesis_referencia.docx        <-- Tesis de pregrado de referencia (Perez Guia, 2024)
+│   ├── script_holmberg.py           <-- Código base de Python
+│   ├── data_lincuna.csv             <-- Base de datos de disparos / costos de Lincuna
+│   └── notas_deep_research.txt      <-- Síntesis exportadas desde NotebookLM
+│
+├── knowledge_base/                  <-- Carpeta generada automáticamente por SKILL-01 en Markdown
+│   ├── 01_metodologia_grounding.md
+│   ├── 02_tesis_empirica_grounding.md
+│   ├── 03_codigo_holmberg_inspeccion.md
+│   └── 04_parametros_mina_lincuna.md
+│
+├── src/
+│   └── skills/                      <-- Herramientas determinísticas en Python (Skills)
+│       ├── multimodal_ingestion_skill.py
+│       ├── holmberg_perimeter_engine.py
+│       ├── heuristic_auto_tajeo.py
+│       ├── inferential_stats_engine.py
+│       └── matrix_consistency_auditor.py
+│
+└── output/                          <-- Entregables finales extensos generados por el agente
+    ├── 01_PLAN_DE_TESIS_COMPLETO.md <-- Documento maestro del Plan de Tesis
+    ├── 02_MATRIZ_DE_CONSISTENCIA.md <-- Matriz estructurada 1:1
+    ├── 03_CRONOGRAMA_GANTT.md       <-- Cronograma detallado de 4 meses
+    └── 04_PRESUPUESTO_ANALITICO.md  <-- Estructura de costos y recursos de la investigación
+
+```
+
+---
+
+# SECCIÓN 4: Archivos de Configuración del Sistema
+
+### 4.1. `SYSTEM_PROMPT.txt` (Para copiar en la raíz)
+
+```text
+# SYSTEM PROMPT: ORQUESTADOR PMO MULTI-AGENTE Y RED TEAM DE INVESTIGACIÓN (UNI FIGMM)
+Eres el Director de la Oficina de Gestión de Proyectos (PMO) y Orquestador de un Sistema Multi-Agente Autónomo especializado en la formulación exhaustiva de Tesis y Proyectos de Titulación Profesional en Ingeniería de Minas bajo estándares de la Universidad Nacional de Ingeniería (UNI FIGMM).
+
+## 1. PRINCIPIOS DE GOBIERNO Y PROTOCOLO DE AUTOCORRECCIÓN
+1. SCOPE PORTABLE Y AUTONOMÍA: Operas exclusivamente dentro de la carpeta raíz del proyecto con rutas relativas (`./inputs/`, `./knowledge_base/`, `./src/skills/`, `./output/`, `./STATE.md`, `./AUDIT_LOG.md`).
+2. PROHIBICIÓN ABSOLUTA DE CONDENSACIÓN O RESÚMENES: Todo documento del Plan de Tesis debe ser redactado con máxima exhaustividad, profundidad técnica, estilo enciclopédico y deducciones matemáticas completas. Prohibido usar respuestas cortas, esquemas vacíos o marcadores de posición.
+3. GROUNDING Y ZERO-HALLUCINATION: Todo dato geomecánico, parámetro de disparo, antecedentes y costos debe ser extraído estrictamente de `./inputs/` y `./knowledge_base/`. Prohibido inventar datos.
+4. DETERMINISMO CIENTÍFICO (SIN MACHINE LEARNING EN EL NÚCLEO): El diseño se fundamenta en Sistemas Agénticos basados en Reglas Físicas Determinísticas (Holmberg, Ashby, Chapman-Jouguet) y Heurísticas de Auto-Tajeo. Las técnicas avanzadas de ML se tratan exclusivamente como 'Líneas de Investigación Futura'.
+5. BUCLE DE AUDITORÍA Y FALSACIONISMO (RED TEAM): Todo borrador generado por los agentes redactores debe ser sometido obligatoriamente a:
+   - [AGENTE AUDITOR]: Verifica el cumplimiento de normas UNI FIGMM, trazabilidad matemática y correspondencia horizontal 1:1 en la Matriz de Consistencia.
+   - [AGENTE ESCÉPTICO]: Actúa como 'Abogado del Diablo'. Cuestiona la viabilidad técnica, detecta sesgos metodológicos, busca riesgos de sobrerotura no mitigados y exige justificación rigurosa.
+   - Si el Auditor o el Escéptico emiten objeciones, el borrador se REFACTORIZA automáticamente antes de aprobar la compuerta de calidad (Quality Gate).
+
+## 2. TAXONOMÍA DE AGENTES INTERNOS
+- [PMO ORCHESTRATOR]: Planifica, asigna tareas, controla el WBS y actualiza `STATE.md`.
+- [KNOWLEDGE INGESTION AGENT]: Ejecuta `SKILL-01` para convertir archivos en bruto a Markdown.
+- [PHYSICS & TAJEO SOLVER]: Ejecuta `SKILL-02` y `SKILL-03` para resolver la malla determinística y el auto-tajeo.
+- [STATISTICAL ANALYST]: Ejecuta `SKILL-04` para contrastes de hipótesis ($t$-Student) y análisis inferencial.
+- [ACADEMIC LEAD WRITER]: Redacta los capítulos en prosa formal, continua y enciclopédica (APA 7ma / UNI FIGMM).
+- [AUDITOR & CONSISTENCY INSPECTOR]: Ejecuta `SKILL-05` para certificar la consistencia lógica y matemática 1:1.
+- [SKEPTIC AGENT (RED TEAM)]: Desafía hipótesis, supuestos geomecánicos y límites operativos.
+
+```
+
+---
+
+### 4.2. `instance_config.yaml`
+
+```yaml
+proyecto_config:
+  titulo_tesis: "Sistema agéntico basado en inteligencia artificial para el diseño asistido de perforación y voladura orientado al control de la sobrerotura en labores subterráneas de la U.E.A. Lincuna, 2026"
+  grado_academico: "Título Profesional de Ingeniero de Minas"
+  universidad: "Universidad Nacional de Ingeniería (UNI)"
+  facultad: "Facultad de Ingeniería Geológica, Minera y Metalúrgica (FIGMM)"
+  unidad_estudio:
+    empresa: "Compañía Minera Lincuna S.A."
+    operacion: "Subterránea mecanizada / semimecanizada"
+    labor_objetivo: "Cruceros y frentes de avance en roca tipo III-B / IV-A"
+    geometria_labor:
+      tipo: "Sección D (Baúl)"
+      ancho_m: 4.5
+      altura_m: 4.5
+      flecha_arco_fl_m: 1.25
+    geomecanica_frente:
+      rmr: 55.5
+      gsi: 50
+      rqd_pct: 60
+      ucs_mpa: 180.05
+      traccion_mpa: 12.15
+      densidad_roca_tm_m3: 2.7
+    linea_base:
+      sobrerotura_historica_pct: 34.36
+      sobrerotura_meta_pct: 5.0
+      costo_shotcrete_usd_m3: 516.58
+  criterio_calidad:
+    exhaustividad: "Máxima profundidad analítica y deductiva"
+    red_team_activo: true
+    allow_black_box_ml: false
+
+```
+
+---
+
+### 4.3. `STATE.md` (Máquina de Estados de la PMO)
+
+```markdown
+# PMO STATE TRACKER - PLAN DE TESIS (UNI FIGMM)
+- PROYECTO: Sistema agéntico basado en IA para el diseño asistido de P&V orientado al control de sobrerotura en Minera Lincuna, 2026.
+- HITO ACTUAL: WBS 0.0 (Inicialización y Setup)
+- ESTADO: EN ESPERA DE EJECUCIÓN
+
+## WORK BREAKDOWN STRUCTURE (WBS) & QUALITY GATES
+- [ ] WBS 1.0: Ingesta Multimodal y Compilación de Base de Conocimiento (SKILL-01)
+  - Quality Gate 1: Aprobado por Auditor de Datos (0 archivos corruptos/omitidos).
+- [ ] WBS 2.0: Motor Físico de Holmberg y Algoritmo de Auto-Tajeo (SKILL-02 & SKILL-03)
+  - Quality Gate 2: Aprobado por Escéptico Físico ($P_{te} \le \sigma_c$, $S/B \le 1.25$).
+- [ ] WBS 3.0: Redacción Exhaustiva del Capítulo I - Planteamiento del Problema
+  - Quality Gate 3: Aprobado por Auditor Metodológico y Escéptico.
+- [ ] WBS 4.0: Redacción Exhaustiva del Capítulo II - Marco Teórico y Conceptual Extenso
+  - Quality Gate 4: Aprobado por Auditor Bibliográfico (Cero citas alucinadas).
+- [ ] WBS 5.0: Redacción Exhaustiva del Capítulo III - Hipótesis y Metodología Integral
+  - Quality Gate 5: Aprobado por Auditor de Consistencia (Correspondencia 1:1 verificada).
+- [ ] WBS 6.0: Matriz de Consistencia, Cronograma, Presupuesto y Compilación Final
+  - Quality Gate 6: Aprobación Final de la PMO para entrega de Plan de Tesis.
+
+## LOG DE DECISIONES Y AUDITORÍA (`AUDIT_LOG.md`)
+- [2026-08-30]: Configuración inicial del entorno portable completada.
+
+```
+
+---
+
+# SECCIÓN 5: Pipeline de Ejecución de Prompts en Gemini CLI
+
+Ejecuta estos 5 pasos de forma secuencial en tu terminal de **Gemini CLI**. Cada paso activa a los agentes, ejecuta las skills en Python, somete el borrador al escéptico y actualiza `STATE.md`.
+
+---
+
+### PASO 1: Ingesta Multimodal y Compilación de Conocimiento (WBS 1.0)
+
+```bash
+gemini "Lee './SYSTEM_PROMPT.txt', './instance_config.yaml' y './STATE.md'. 
+Actúa como [PMO ORCHESTRATOR] y [KNOWLEDGE INGESTION AGENT].
+
+TAREAS:
+1. Inspecciona la carpeta './inputs/'. Identifica todos los archivos (.pptx, .docx, .py, .csv, .pdf, .txt).
+2. Construye y ejecuta el script './src/skills/multimodal_ingestion_skill.py' para parsear de forma exhaustiva el contenido de todos los inputs hacia './knowledge_base/':
+   - Extrae diapositivas y directivas metodológicas del PPT a './knowledge_base/01_metodologia_grounding.md'.
+   - Extrae el texto completo, antecedentes y tablas de la tesis DOCX a './knowledge_base/02_tesis_empirica_grounding.md'.
+   - Extrae y documenta la lógica del script Python a './knowledge_base/03_codigo_holmberg_inspeccion.md'.
+   - Extrae las notas de Deep Research y datos de mina a './knowledge_base/04_parametros_mina_lincuna.md'.
+3. ACTIVA AL [AGENTE AUDITOR]: Verifica que no se haya perdido ninguna tabla de costos, propiedades geomecánicas ni fórmulas matemáticas en la conversión.
+4. Registra el informe en './AUDIT_LOG.md' y actualiza './STATE.md' marcando WBS 1.0 como completado."
+
+```
+
+---
+
+### PASO 2: Motor Físico Determinístico y Algoritmo de Auto-Tajeo (WBS 2.0)
+
+```bash
+gemini "Lee './SYSTEM_PROMPT.txt', './STATE.md', './instance_config.yaml' y './knowledge_base/'. 
+Actúa como [PHYSICS & TAJEO SOLVER] supervisado por el [SKEPTIC AGENT (RED TEAM)].
+
+TAREAS:
+1. Desarrolla y ejecuta './src/skills/holmberg_perimeter_engine.py' implementando:
+   - Arranque en 4 cuadrantes con alivio equivalente, burden crítico y limitación de carga plástica.
+   - Arrastres con factor de fijación f=1.45, relación S/B=1 y ángulo de realce.
+   - Corona y Hastiales con voladura de precorte desacoplada asegurando Pte <= UCS (180.05 MPa) y qce > qc.
+2. DESARROLLA Y EJECUTA EL ALGORITMO DE AUTO-TAJEO ('./src/skills/heuristic_auto_tajeo.py'):
+   - Resuelve geométricamente la distribución automática y equidistante de los taladros de tajeo/ayudas en el espacio libre entre el 4to cuadrante y los contornos, superando la limitación del cálculo manual de pregrado.
+3. BUCLE DEL ESCÉPTICO (RED TEAM):
+   - El [SKEPTIC AGENT] evalúa: ¿Existe riesgo de sobrecarga en los taladros de alivio? ¿El espaciamiento en corona previene el daño perimétrico? ¿El tajeo cubre toda la sección sin dejar áreas sub-rotas?
+   - Si el Escéptico detecta deficiencias, ajusta los parámetros hasta validar la malla.
+4. Exporta las tablas completas de la malla a './output/malla_lincuna_dimensionada.json'.
+5. Registra el dictamen en './AUDIT_LOG.md' y actualiza './STATE.md' marcando WBS 2.0 como completado."
+
+```
+
+---
+
+### PASO 3: Redacción del Capítulo I - Planteamiento del Problema con Red Team (WBS 3.0)
+
+```bash
+gemini "Lee './SYSTEM_PROMPT.txt', './STATE.md', './instance_config.yaml' y './knowledge_base/'. 
+Actúa como [ACADEMIC LEAD WRITER], [AUDITOR] y [SKEPTIC AGENT].
+
+TAREAS:
+1. Redacta el borrador de './output/CAP_I_PLANTEAMIENTO_PROBLEMA.md' con máxima extensión y profundidad técnica formal:
+   - PORTADA ACADÉMICA FORMAL (UNI FIGMM, Título Profesional de Ingeniero de Minas).
+   - 1.1. PLANTEAMIENTO DE LA REALIDAD PROBLEMÁTICA (5 a 7 páginas de análisis técnico continuo):
+     * Diagnóstico operativo del ciclo de avance en Minera Lincuna (frentes de 4.5 x 4.5 m).
+     * Análisis del sobredimensionamiento y daño estructural por mallas empíricas convencionales.
+     * Evaluación cuantitativa del impacto de la sobrerotura histórica (34.36%): sobrecostos de sostenimiento por lanzado de shotcrete ($516.58 USD/m³), dilución del mineral, mayor volumen de limpieza mecanizada con scooptramp y riesgos de caída de rocas.
+     * Cuadro comparativo riguroso: Situación Actual (Problemática) vs. Situación Futura con Sistema Agéntico.
+   - 1.2. FORMULACIÓN DEL PROBLEMA:
+     * Problema General y 3 Problemas Específicos formulados como preguntas abiertas no dicotómicas.
+   - 1.3. JUSTIFICACIÓN DE LA INVESTIGACIÓN (Desarrollo exhaustivo en 4 dimensiones):
+     * Justificación Teórica, Metodológica, Práctica/Operativa y Económica/Seguridad (con detalle del ahorro proyectado para 2 km de avance).
+   - 1.4. DELIMITACIÓN Y ALCANCE (Espacial, temporal 2026 y operacional).
+   - 1.5. OBJETIVOS DE LA INVESTIGACIÓN (General con meta <= 5% de sobrerotura y 3 Específicos).
+2. EVALUACIÓN Y BUCLE DE AUTOCORRECCIÓN:
+   - El [AGENTE AUDITOR] audita que los objetivos utilicen verbos de logro y no de actividad simple.
+   - El [SKEPTIC AGENT] desafía: ¿La justificación económica contempla el costo de perforación de taladros adicionales de alivio? ¿La delimitación excluye zonas con fallas geológicas mayores no atribuibles a voladura?
+   - Si hay observaciones, refactoriza el capítulo de inmediato.
+3. Registra el análisis en './AUDIT_LOG.md' y actualiza './STATE.md' marcando WBS 3.0 como completado."
+
+```
+
+---
+
+### PASO 4: Redacción del Capítulo II - Marco Teórico y Conceptual Extenso (WBS 4.0)
+
+```bash
+gemini "Lee './SYSTEM_PROMPT.txt', './STATE.md' y './knowledge_base/'. 
+Actúa como [ACADEMIC LEAD WRITER], [PHYSICS SOLVER] y [AUDITOR].
+
+TAREAS:
+1. Redacta './output/CAP_II_MARCO_TEORICO.md' de forma sumamente extensa, profunda y enciclopédica:
+   - 2.1. ANTECEDENTES DE LA INVESTIGACIÓN:
+     * Reseña pormenorizada de antecedentes Internacionales, Nacionales (Mina Poderosa, Consorcio Minero Horizonte Parcoy, etc.) y Locales extraídos de './knowledge_base/02_tesis_empirica_grounding.md' y notas de Deep Research.
+     * Cada antecedente debe incluir: Autor, Año, Título, Unidad Minera, Metodología aplicada, Parámetros evaluados y Resultados cuantitativos exactos (% reducción de sobrerotura y ahorro económico).
+   - 2.2. BASES TEÓRICAS:
+     * Mecanismos de fragmentación de rocas: Termodinámica de explosivos (combustión, deflagración y detonación supersónica), ecuación de estado Chapman-Jouguet, ondas de choque compresionales, ondas reflejadas de tracción, generación de grietas radiales y cuña de rotura por gases.
+     * Evolución histórica del sostenimiento subterráneo: Madera, pernos de anclaje (Split Set, Helicoidales, Swellex), mallas electrosoldadas y concreto lanzado (shotcrete vía húmeda robotizada con aditivos acelerantes).
+     * Teoría de Voladura Controlada: Mecánica del Precorte (Pre-splitting) vs. Recorte amortiguado (Smooth Blasting), desacoplamiento de carga (relación 2:1) y control de presión efectiva en pared de taladro.
+     * Deducción Matemática Completa del Modelo de Holmberg: Desarrollo paso a paso de las ecuaciones de las 5 secciones (Arranque de 4 cuadrantes, arrastres, ayudas de corona/hastiales y precorte perimétrico).
+     * Fundamentación de Sistemas Agénticos en Minería: Justificación técnica y científica de por qué una arquitectura agéntica basada en reglas físicas y orquestación de herramientas determinísticas supera al software estático y evita los riesgos de interpretabilidad de cajas negras de Machine Learning.
+   - 2.3. MARCO CONCEPTUAL EXTENSO:
+     * Glosario enciclopédico detallado (mínimo 2 párrafos sólidos por término explicando definición formal, contexto en minería subterránea e impacto en sobrerotura): Geomecánica, RMR, GSI, RQD, UCS, Módulo de Young, Cohesión, Ángulo de Fricción, Sobrerotura, Burden Teórico y Práctico, Espaciamiento, Taco, Desviación de Perforación, Emboquillado, Desacoplamiento, Presión de Detonación, Presión Efectiva de Taladro, Voladura de Precorte, Half-Cast Factor, Shotcrete, Sistema Agéntico, Heurística de Auto-Tajeo, entre otros.
+2. AUDITORÍA DE VERACIDAD: El [AGENTE AUDITOR] coteja cada cita y fórmula contra la base de conocimiento.
+3. Registra en './AUDIT_LOG.md' y actualiza './STATE.md' marcando WBS 4.0 como completado."
+
+```
+
+---
+
+### PASO 5: Metodología, Matriz de Consistencia 1:1, Cronograma y Compilación Final (WBS 5.0 y 6.0)
+
+```bash
+gemini "Lee './SYSTEM_PROMPT.txt', './STATE.md', './instance_config.yaml', './knowledge_base/' y todos los capítulos en './output/'. 
+Actúa como [PMO ORCHESTRATOR], [ACADEMIC LEAD WRITER], [AUDITOR] y [SKEPTIC AGENT].
+
+TAREAS:
+1. Redacta './output/CAP_III_METODOLOGIA.md':
+   - Hipótesis General y 3 Específicas formuladas como proposiciones condicionales con Variable Independiente (X = Aporte) y Variable Dependiente (Y = Finalidad).
+   - Tabla completa de Operacionalización de Variables: Variables X, Y y Z (Intervinientes) con dimensiones, indicadores, unidades y escalas de medición.
+   - Enfoque Cuantitativo deductivo, Tipo Aplicada-Tecnológica, Nivel Explicativo-Causal, Diseño Cuasiexperimental longitudinal (Pre-test vs. Post-test).
+   - Población y Muestra en frentes de avance de Lincuna (Criterios de inclusión y exclusión).
+   - Técnicas e instrumentos de recolección de datos y procesamiento.
+   - Protocolo estadístico inferencial: Contraste de hipótesis mediante la prueba t de Student (alpha = 0.05) para una muestra y muestras emparejadas.
+2. Genera './output/02_MATRIZ_DE_CONSISTENCIA.md':
+   - Ejecuta `SKILL-05` ('./src/skills/matrix_consistency_auditor.py') para generar y validar la tabla formal en Markdown con correspondencia horizontal 1:1 estricta: Problemas (G/E1/E2/E3) | Objetivos (G/E1/E2/E3) | Hipótesis (G/E1/E2/E3) | Variables e Indicadores | Metodología.
+3. Genera './output/03_CRONOGRAMA_GANTT.md' y './output/04_PRESUPUESTO_ANALITICO.md':
+   - Cronograma detallado de 4 meses con actividades semanales desde recolección hasta sustentación.
+   - Presupuesto pormenorizado de recursos humanos, equipos, software y ensayos.
+4. COMPILACIÓN UNIFICADA:
+   - Ensambla todos los capítulos en el documento final maestro: './output/01_PLAN_DE_TESIS_COMPLETO.md', integrando carátula formal UNI FIGMM, índice general, referencias bibliográficas en formato APA 7ma edición y anexos.
+5. CIERRE DEL PROYECTO:
+   - El [AGENTE AUDITOR] y el [SKEPTIC AGENT] emiten el dictamen final de aprobación en './AUDIT_LOG.md'.
+   - Actualiza './STATE.md' marcando la WBS como 100% COMPLETADA."
+
+```

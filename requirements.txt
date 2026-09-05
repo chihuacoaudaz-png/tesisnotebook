@@ -1,0 +1,21 @@
+# Dependencias del Sistema Agéntico de Tesis y Compilador Científico (UNI FIGMM)
+
+# Procesamiento y generación de documentos Word y PDF
+python-docx>=1.1.0
+latex2mathml>=3.77.0
+lxml>=5.2.0
+pywin32>=306
+pymupdf>=1.24.0
+
+# Procesamiento de datos geomecánicos y matrices
+pandas>=2.2.0
+openpyxl>=3.1.2
+numpy>=1.26.0
+
+# Herramientas de agentes y configuración
+pyyaml>=6.0.1
+requests>=2.31.0
+
+# NotebookLM CLI y automatización de navegador
+notebooklm-py>=0.3.0
+playwright>=1.42.0

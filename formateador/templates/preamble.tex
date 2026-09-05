@@ -1,0 +1,90 @@
+% PREAMBLE MAESTRO OFICIAL - UNIVERSIDAD NACIONAL DE INGENIERÍA (UNI FIGMM)
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{amsmath,amssymb,amsfonts,mathtools,bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+% Configuración de Márgenes Oficiales UNI
+\geometry{
+    a4paper,
+    left=3.0cm,
+    top=2.54cm,
+    right=2.5cm,
+    bottom=2.5cm,
+    headheight=15pt,
+    footskip=1.25cm
+}
+
+% Espaciado interlineal reglamentario (1.15)
+\setstretch{1.15}
+
+% Colores Institucionales UNI
+\definecolor{UniBlue}{RGB}{13, 35, 58}       % Azul Oscuro Institucional
+\definecolor{UniSecondary}{RGB}{46, 134, 193} % Azul Secundario
+\definecolor{TableHead}{RGB}{13, 35, 58}
+\definecolor{TableLight}{RGB}{248, 249, 250}
+\definecolor{AccentGreen}{RGB}{212, 239, 223}
+
+% Configuración de Hipervínculos
+\hypersetup{
+    colorlinks=true,
+    linkcolor=UniBlue,
+    citecolor=UniSecondary,
+    urlcolor=UniSecondary,
+    pdfborder={0 0 0}
+}
+
+% Estilo de Encabezados y Pies de Página
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\scshape\nouppercase{\leftmark}}
+\fancyhead[R]{\small\thepage}
+\fancyfoot[C]{}
+
+% Formato para páginas de inicio de capítulo
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyfoot[C]{\small\thepage}
+}
+
+% Formato de Títulos y Secciones
+\titleformat{\section}
+    {\normalfont\Large\bfseries\color{UniBlue}}{\thesection.}{0.8em}{}
+\titleformat{\subsection}
+    {\normalfont\large\bfseries\color{UniBlue}}{\thesubsection.}{0.6em}{}
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries}{\thesubsubsection.}{0.5em}{}
+
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{2.5ex plus 1ex minus .2ex}{1.0ex plus .2ex}
+
+% Formato de Captions de Tablas y Figuras
+\captionsetup[table]{
+    position=top,
+    labelfont={bf,small,color=UniBlue},
+    textfont={small},
+    skip=6pt
+}
+\captionsetup[figure]{
+    position=bottom,
+    labelfont={bf,small,color=UniBlue},
+    textfont={small},
+    skip=6pt
+}

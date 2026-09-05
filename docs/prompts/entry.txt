@@ -1,0 +1,24 @@
+SISTEMA AGÉNTICO BASADO EN INTELIGENCIA ARTIFICIAL PARA EL DISEÑO ASISTIDO DE PERFORACIÓN Y VOLADURA ORIENTADO AL CONTROL DE LA SOBREROTURA EN LABORES SUBTERRÁNEAS DE LA U.E.A. LINCUNA, 2026
+
+Innovador
+
+Agente que realiza mallas
+Basado en el método de holdmerg
+
+Sistema agentico basado en modelo de holdmerg reduce la sobrerotura
+
+Sistema agentico podr entender el modelo matemático de holdmerg
+Sistema agentico basado al de holdmerg – mas rápido en realizar mallas
+Menor sobretorura – mas económico
+
+Metodología aplicativa
+
+
+Marco teórico
+Minería subterránea
+Perforación y voladura
+Holmberg–Persson como modelo base + Langefors–Kihlström + NTNU como validación
+Ia agentica
+
+Entregables
+Malla en formato pdf indicando los inputs que se colocaron,

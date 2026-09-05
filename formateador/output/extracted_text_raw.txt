@@ -1,0 +1,1708 @@
+========================================
+PAGINA 1
+========================================
+Power BI Desktop
+PESAJE DE VOLQUETES
+GERENCIA MINA CUAJONE 2025
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 1
+DIRIGIDO A
+ELABORADO POR
+FECHA DE ELAB.
+SUPERINTENDENTE DE OPERACIONES MINA. 
+BECARIO OPERACIONES MINA
+24 DE OCTUBRE DEL 2025.
+SUPERINTENDENCIA DE OPERACIONES MINA CUAJONE
+
+
+========================================
+PAGINA 2
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 2
+CONTENIDO
+1. RESUMEN
+1.1. ALCANCES
+1.2. UBICACIÓN
+1.3. PERSONAL A CARGO
+2. OBJETIVOS
+3. PROCEDIMIENTO DEL PESAJE
+4. DATOS RECOPILADOS
+4.1. DATOS PROCESADOS
+4.2. CÁLCULO DEL VOLQUETE CARGADO/VACÍO
+5. ANÁLISIS DE PESO VACIO/CARGADO Y PAYLOAD
+6. DISTRIBUCIÓN DE CARGA EN EL EJE DELANTERO
+6.1. ANÁLISIS DE DISTRIBUCIÓN EN FLOTA DE MAYOR TONELAJE
+6.2. ANÁLISIS DE DISTRIBUCIÓN EN FLOTA DE MENOR TONELAJE
+7. DISTRIBUCIÓN DE CARGA EN EL EJE POSTERIOR
+7.1. ANÁLISIS DE DISTRIBUCIÓN EN FLOTA DE MAYOR TONELAJE
+7.2. ANÁLISIS DE DISTRIBUCIÓN EN FLOTA DE MENOR TONELAJE
+8. DISTRIBUCIÓN DE CARGA POR EJE
+8.1. ANÁLISIS POR FLOTA
+8.2. ANÁLISIS POR VOLQUETE
+9. EFICIENCIA DE LOS PALEROS EN EL CENTRADO DE LA CARGA
+9.1. LISTA DE OPERADORES DE PALA
+10. PAYLOAD VS TONELAJE VIMS/PLM
+11. CÁLCULO DEL PESO DEL PARACHOQUE.
+12. CONCLUSIONES
+
+
+========================================
+PAGINA 3
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 3
+El 12 de octubre de 2025 se llevaron a cabo los trabajos finales de preparación en la zona de
+pesaje, los cuales comprendieron labores de relleno, nivelación y compactación del terreno. Para la
+ejecución de estas actividades se emplearon los equipos Cargador Frontal WA470 (F972),
+Motoniveladora CAT 24M (M244) y Rodillo Bomag WB 226 DH-5 (RCC-1). Asimismo, con el
+propósito de garantizar una mayor precisión en la nivelación del terreno, se contó con el apoyo
+técnico de la empresa contratista Mincoser. En las Figuras 1, 2 se presentan los trabajos realizados
+durante esta etapa.
+1. RESUMEN
+1.1. ALCANCES
+Figura 1. Nivelación con la M244.
+Figura 2. Compactación y apoyo de MINCOSER.
+El área de pesaje estuvo delimitada por el parqueo Cocotea Bajo (Sur Oeste), Grifo Cocotea Bajo
+(SurEste) y la Tranquera 4 (Norte). En la figura 3 se muestra la ubicación del área del pesaje en el
+software MineOperate.
+1.2. UBICACIÓN
+
+
+========================================
+PAGINA 4
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 4
+Figura 3. Ubicación de la zona de pesaje.
+Durante la realización del pesaje participaron diversas áreas y empresas contratistas, según la tabla
+1 adjunta:
+El trabajo tuvo una duración total de nueve (9) días, iniciando el 12 de octubre de 2025 y
+culminando el 20 de octubre de 2025. Durante la jornada final, y a solicitud de la empresa Ferreyros
+CAT, se realizaron repesajes de los volquetes V132, V144, V163 y V164, efectuándose dos
+mediciones por cada unidad en condición de carga.
+1.3. PERSONAL A CARGO
+Tabla1. Funciones del personal a cargo del pesaje.
+
+
+========================================
+PAGINA 5
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 5
+El área de pesaje, de 15 m de ancho por 30 m de largo, se ubicó en la ruta de descarga hacia el
+depósito de desmonte Cocotea Bajo. En la Figura 4 se muestra la ubicación de los PADs y el acceso
+a la balanza. Los volquetes ingresaron a los PADs a una velocidad máxima de 5 km/h para
+garantizar la estabilidad de la balanza durante la medición.
+Figura 4. Vista en planta de la zona de pesaje.
+3. PROCEDIMIENTO DEL PESAJE
+El pesaje de cada volquete se realizó tres (3) veces vacío y cuatro (4) veces cargado con
+desmonte. El requerimiento del fabricante indica que el cálculo del peso del volquete vacío (EMW),
+debe realizarse con los fluidos al 100%, debido a ello cada volquete contó con al menos 90 % de
+combustible. En el pesaje cargado se mantuvo un mínimo de 50 % de combustible. En la figura 5 y
+6 se muestra el procedimiento de pesaje de los volquetes cargados y vacios.
+2. OBJETIVOS
+a. Determinar el peso vacio (EMW) y carga útil (Payload) de los 46 volquetes de Operaciones Mina
+Cuajone.
+b. Mostrar la distribución de peso (ton) en cada posición de los neumáticos.
+c. Cuantificar en toneladas, el impacto de los accesorios adicionales en la distribución del peso del
+volquete.
+d. Calcular la diferencia entre el tonelaje real (balanza) y el tonelaje de la pantalla de ADVISOR
+(Caterpillar) y Payload meter (Komatsu).
+e. Determinar los operadores de pala con mayor eficiencia en el centrado de carga.
+
+
+========================================
+PAGINA 6
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 6
+Figura 6. Procedimiento de pesaje del volquete cargado.
+a. Previa coordinación entre Control Mina y el becario de Operaciones Mina vía radial
+(frecuencia C2) para autorizar el ingreso de los volquetes.
+b. En la frecuencia 13 (local), y con apoyo del vigía, se brindan las indicaciones al operador
+del volquete para posicionar el eje delantero sobre ambos PADs.
+c. Una vez que los neumáticos del eje delantero se encuentran centrados y la lectura del
+pesómetro se estabiliza, se registran los datos en el formato establecido.
+d. Posteriormente, bajo las indicaciones del becario de Operaciones Mina, se posiciona el eje
+trasero sobre ambos PADs y se realiza el registro correspondiente.
+e. Finalmente, se indica al operador del volquete su salida de la zona de pesaje si se encuentra
+cargado; en caso de estar vacío, debe retornar inmediatamente a la zona de ingreso hasta
+completar sus 3 pasadas.
+Figura 5. Procedimiento de pesaje del volquete vacío.
+3.1. PROCEDIMIENTO DE PESAJE:
+
+
+========================================
+PAGINA 7
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 7
+4. DATOS RECOPILADOS
+4.1.  DATOS PROCESADOS
+Los datos registrados en campo:
+° Fecha.
+° Hora del pesaje.
+° Tipo de material transportado.
+° Asignación de pala.
+° Número de pases de carguío.
+° Volquete cargado o vacío.
+° Lectura de los pads: Eje delantero, eje posterior derecho e izquierdo.
+° Payload del volquete.
+° Tonelaje de la pantalla VIMS.
+° Tonelaje Display.
+° Nivel de combustible (%)..
+° Horómetro.
+4.2.  CÁLCULO DEL VOLQUETE VACÍO Y CARGADO
+El cálculo del volquete cargado y vacío se realizó mediante la siguiente fórmula:
+Peso del eq. vacío/cargado = ED(TI+TD) + EP(TI+TD)
+Donde:
+ED: Eje delantero.
+EP: Eje posterior.
+TI: Tonelaje del PAD izquierdo.
+TD: Tonelaje del PAD derecho.
+A continuación se muestra la fórmula de cálculo del tonelaje de combustible:
+Toneladas de Combustible = (Capacidad volumétrica)(densidad)(%Combustible)
+Capacidad volumétrica: Galones de capacidad del tanque de combustible.
+Densidad: Densidad del combustible (0.00322 tn/gl).
+%Combustible: Indicador de nivel de combustible.
+CAPACIDAD DEL TANQUE DE COMBUSTIBLE (GALONES)
+CAT 797F
+CAT 798AC
+KOMATSU
+980 E-4
+KOMATSU
+980 E-5
+KOMATSU
+980E-4SE
+KOMATSU
+930E
+KOMATSU
+930E-4
+CAT 793D
+2000
+2000
+1400
+1400
+1400
+1200
+1200
+1150
+Figura 7. Capacidad volumetrica del tanque de combustible.(Gl)
+
+
+========================================
+PAGINA 8
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 8
+5. ANÁLISIS DE PESO VACIO, CARGADO Y PAYLOAD
+5.1.  FLOTA CATERPILAR 797F
+En la flota Komatsu, el nivel de combustible se visualiza a través de un indicador analógico,
+mientras que en la flota CAT se muestra de forma similar, complementándose además con la
+información proporcionada por el sistema ADVISOR.
+PESO VACIO/CARGADO Y CARGA ÚTIL DE LA FLOTA CATERPILLAR 797F
+VOLQUETE
+138
+134
+136
+132
+133
+135
+146
+140
+144
+130
+143
+137
+131
+142
+147
+145
+141
+139
+670
+665
+663
+656
+655
+652
+645
+645
+643
+643
+641
+641
+641
+635
+634
+633
+633
+628
+301
+294
+293
+301
+292
+306
+295
+297
+284
+293
+295
+297
+299
+293
+292
+291
+302
+295
+370
+333
+371
+331
+359
+342
+356
+363
+346
+343
+348
+350
+346
+371
+342
+342
+350
+344
+Peso Cargado
+Peso Vacio
+Payload
+Los volquetes V132, V135, V138 y V141, con mayor peso vacío (EMW), a diferencia de las demás,
+cuentan con un protector de tolva (liner). Este accesorio adicional, de 17 toneladas, tiene como
+finalidad disminuir el ruido y amortiguar el impacto de la carga sobre la tolva y el bastidor del
+volquete, durante el carguío.
+El volquete V144 destaca por ser el más ligero
+con 284 toneladas. Este equipo es el único en su
+flota con tipo de tolva AUSTIN JEC.
+Figura 8. Pesaje de la flota CAT 797F.
+Dentro de los volquetes sin protector de goma, los
+volquetes V131 y V137 destacan en peso vacío
+(299 y 297 toneladas respectivamente), ello se
+debe a que presentan tolva AUSTIN WESTECH,
+una tolva que supera en 6 toneladas a la tolva
+MSDII. Asimismo la variación en peso vacío en los
+demás volquetes se debe a la reparación que
+hace mantenimiento en las tolvas, añadiendo un
+revestimiento metálico.
+TOLVA AUSTIN JEC:
+Peso: 47.4 ton
+•
+Altura de carguío: 
+7.6 m
+•
+Enclavamiento: 13°
+•
+Precio: 268, 000 $
+•
+TOLVA WESTECH:
+Peso: 52. 1 ton
+•
+Altura de carguío: 
+7.7 m
+•
+Enclavamiento: 12°
+•
+Precio: 272, 176 $
+•
+Figura 9 . Tolva Austin JEC vs Austin WESTECH.
+
+
+========================================
+PAGINA 9
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 9
+5.2.  FLOTA CATERPILAR 798AC
+En la figura 9 se muestra el resultado de pesaje de la flota CAT 798AC. En carga útil, el volquete
+V10 de tolva MP supera en 3 toneladas al volquete V11 de tolva HE. Estos volquetes no presentan
+parachoque.
+Figura 10. Pesaje de la flota CAT 798AC.
+5.3. FLOTA CATERPILAR 793D.
+El peso del volquete V120 supera en 5 toneladas al volquete V121. El volquete V120 cargó en
+promedio 9 toneladas más que el V121. El análisis se muestra en la figura 12. La tolva del volquete
+120 tiene mayor capacidad volumétrica, con ello se justifica su mayor carga útil.
+Figura 12. Pesaje de la flota CAT 793D
+FLOTA CAT 798 AC
+VOLQUETE
+10
+11
+639
+635
+262
+262
+376
+373
+Peso Cargado
+Peso Vacio
+Payload
+TOLVA MP:
+Max Payload (MP)
+•
+Ancho: 9.93 m
+•
+Altura de carga: 7.04 m
+•
+Cola: 5.03 m
+•
+Espesor: 0.4 m
+•
+Enclavamiento: 12°
+•
+Figura 11. Tipo de tolva flota CAT 798AC.
+TOLVA HE:
+High Efficiency (HE)
+•
+Ancho: 9.74 m
+•
+Altura de carga: 7.66 m
+•
+Cola: 4.91 m
+•
+Espesor: 0.44 m
+•
+Enclavamiento: 16°
+•
+FLOTA CAT 798 AC
+VOLQUETE
+120
+121
+389
+375
+176
+171
+213
+204
+Peso Cargado
+Peso Vacio
+Payload
+TOLVA MSDII:
+Estandar
+•
+Ancho: 7.72 m
+•
+Altura de carga: 6.41 m
+•
+Cola: 4.35 m
+•
+Espesor: 0.43 m
+•
+Enclavamiento: 9°
+•
+Figura 13. Tipo de tolva flota CAT 793D.
+TOLVA MSDII:
+Estandar
+•
+Ancho: 7.44 m
+•
+Altura de carga: 6.19 m
+•
+Cola: 4.17 m
+•
+Espesor: 0.44 m
+•
+Enclavamiento: 13°
+•
+
+
+========================================
+PAGINA 10
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 10
+5.4. FLOTA KOMATSU 930E
+Los volquetes V100 y V101, equipados con tolvas DT-Hiload, presentan pesos vacíos con mínima
+variación (1t). En su lugar, el V103 posee tolva Estándar, mientras que el V105 una Austin
+WESTECH. La variación en los modelos de tolva y de Motor (QSK60, MTU2000), justifican una
+variación en el EMW.
+Figura 14. Pesaje de la flota Komatsu 930E
+Figura 16. Pesaje de la flota Komatsu 930E-4
+5.5.  FLOTA KOMATSU 930E-4
+Los volquetes que comparten el modelo de tolva tienen un peso vacío muy similar. Cabe mencionar
+que el volquete V106 es de tolva WESTECH.
+DT Hiload: V107, V108 y V112.
+FLOTA KOMATSU 930E
+VOLQUETE
+100
+101
+103
+105
+517
+518
+545
+532
+226
+225
+239
+237
+291
+295
+306
+293
+Peso Cargado
+Peso Vacio
+Payload
+NOTA: Todos los volquetes presentan parachoque y ninguno protector de goma.
+TOLVA DT HILOAD:
+Ancho: 8.66 m
+•
+Altura de carga: 7.41 m
+•
+Cola: 4.85 m
+•
+Espesor: 0.26 m
+•
+Enclavamiento: 13°
+•
+33.2 toneladas.
+•
+Figura 15. Tipo de tolva flota Komatsu 930E.
+TOLVA AUSTIN WESTECH:
+Ancho: 8.58 m
+•
+Altura de carga: 7.47 m
+•
+Cola: 4.6 m
+•
+Espesor: 0.39 m
+•
+Enclavamiento: 9°
+•
+39.5 toneladas
+•
+FLOTA KOMATSU 930E
+VOLQUETE
+106
+107
+108
+109
+110
+111
+112
+113
+114
+517
+507
+516
+530
+505
+526
+517
+514
+516
+236
+226
+227
+243
+228
+238
+227
+238
+229
+281
+288
+291
+276
+277
+289
+282
+288
+288
+Peso Cargado
+Peso Vacio
+Payload
+NOTA: Todos los volquetes presentan parachoque y ninguno protector de goma.
+TOLVA AUSTIN JEC:
+V110, V112.
+•
+Altura de carga: 7.28 m
+•
+Cola: 4.71 m
+•
+Espesor: 0.5 m
+•
+Enclavamiento: 8°
+•
+35.5 toneladas.
+•
+TOLVA ESTANDAR:
+V109, V111 Y V113.
+•
+Altura de carga:  m
+•
+Cola: 4.6 m
+•
+Espesor: 0.39 m
+•
+Enclavamiento: 9°
+•
+Figura 17. Tolva Austin JEC y ESTANDAR.
+
+
+========================================
+PAGINA 11
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 11
+5.6.  FLOTA KOMATSU 930E-4SE
+En la flota 930E-4SE, el volquete V116 supera en 6 toneladas al volquete V115. Esta ventaja en
+peso, es en el eje trasero, debido a que el volquete V116 tienen instalado dados en su tolva DT
+Hiload Phase X.
+Figura 18. Pesaje de la flota Komatsu 930E-4SE
+5.7.  FLOTA KOMATSU 980E-4
+V115
+V116
+Figura 19. Dados instalados en el volquete V116.
+Figura 20. Pesaje de la flota Komatsu 980E-4
+El menor peso vacío (EMW) de los volquetes V160 y V165, se debe a que no tienen instalado
+gomas de protección en sus tolvas, a diferencia de los demás. En promedio hay una diferencia de
+15 toneladas en comparación a los volquetes que presentan liner.
+FLOTA KOMATSU 930E-4SE
+VOLQUETE
+115
+116
+521
+514
+231
+237
+289
+277
+Peso Cargado
+Peso Vacio
+Payload
+FLOTA KOMATSU 930E-4SE
+VOLQUETE
+160
+161
+162
+163
+164
+165
+610
+628
+617
+636
+628
+625
+272
+284
+286
+288
+284
+269
+338
+356
+331
+348
+344
+344
+Peso Cargado
+Peso Vacio
+Payload
+
+
+========================================
+PAGINA 12
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 12
+5.8.  FLOTA KOMATSU 98E-5
+Figura 23. Análisis de distribución en la posición 1 y 2 vacío.
+FLOTA 980 E-5
+ID
+167
+168
+166
+640
+623
+602
+289
+286
+287
+351
+315
+337
+Peso Cargado
+Peso Vacio
+Payload real
+En la flota 980 E-5, no hay una variación significativa en el peso vacío, esta flota, en su totalidad
+presenta tolva DT Hiload Phase X y motor QSK78, además, todos presentan protector de caucho y
+ninguno parachoque.
+Figura 21. Pesaje de la flota 980 E-5.
+6. DISTRIBUCIÓN DE CARGA EN EL EJE DELANTERO
+DISTRIBUCIÓN DE CARGAS DEL VOLQUETE VACÍO - POR NEUMÁTICOS
+6.1.  FLOTA  DE MAYOR CAPACIDAD DE TONELAJE
+Figura 22. Modelo de tolva DT Hiload.
+En la flota CAT 797F y CAT 798AC hay un desbalance de 7.5 toneladas entre la posición 1 y 2. En
+el caso de la flota Komatsu el desbalance es de 2 toneladas a favor de la posición 2. Este
+desbalance se debe a la ubicación del tanque de combustible, en la flota CAT el desbalance es
+mayor debido a que el tanque de combustible es de 2000 gl frente a los 1400 gl de la flota
+Komatsu.
+Δ = 7.29 t
+Δ = 7.61 t
+Δ = 2.14 t
+Δ = 1.73 t
+
+
+========================================
+PAGINA 13
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 13
+6.2.  FLOTA DE MENOR CAPACIDAD DE TONELAJE
+DISTRIBUCIÓN DE CARGAS DEL VOLQUETE CARGADO - POR NEUMÁTICOS
+Figura 24. Análisis de distribución de peso en la posición 1 y 2 cargado.
+En la flota CAT 797F la posición 1 y 2 cargan en promedio 115 toneladas, con picos de hasta 134
+toneladas, superando excesivamente al target de Michellin (109 toneladas) en el tamaño 59/80R63
+y en ocasiones al target de Bridgestone VREV (123.5 toneladas). Esto se agrava en la rampa
+negativa de la ruta de P08 hacía Cuajone Este. Esta condición podría provocar prematuramente
+una separación mecánica.
+DISTRIBUCIÓN DE CARGAS DEL VOLQUETE VACÍO- POR NEUMÁTICOS
+Figura 25. Análisis de distribución de peso en la posición 1 y 2 vacío.
+En la flota CAT 793D existe un desbalance de 2.6 toneladas a favor de la posición 1. En la flota
+Komatsu 930 hay un desbalance de 3 toneladas la favor de la posición 2. Este desbalance se debe
+a la ubicación respectiva del tanque de combustible. La capacidad del tanque de combustible en la
+flota Komatsu 930E-4SE es de 1400 galones.
+Δ = 2.63 t
+Δ = 2.93 t
+Δ = 2.8 t
+Δ = 2.8 t
+Δ = 1.00 t
+Δ = 4.20 t
+Δ = 4.00 t
+Δ = 11.00 t
+
+
+========================================
+PAGINA 14
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 14
+7. DISTRIBUCIÓN DE CARGA EN EL EJE POSTERIOR
+7.1.  FLOTA  DE MAYOR CAPACIDAD DE TONELAJE
+DISTRIBUCIÓN DE CARGAS DEL VOLQUETE CARGADO- POR NEUMÁTICOS
+CAT 793D
+KOMATSU 930E
+KOMATSU 930E-4
+KOMATSU 930E-4SE
+60
+80
+100
+W1
+W2
+Figura 27. Análisis de distribución de peso en la posición 3&4 vs 5&6 vacío.
+Figura 26. Análisis de distribución de peso en la posición 1 y 2 cargado.
+En la flota Komatsu 930 se observa que, en promedio, la posición 2 carga 91.2 toneladas, una
+carga menor al target de Michellin (92 toneladas). Sin embargo, se observan picos de 103
+toneladas, excediendo el target de Michellin y Bridgestone VREV (98 toneladas).
+Se observa que en todas las flotas existe un desbalance entre 3.8 a 6.7 toneladas a favor de las
+posiciones 3 y 4. Es importante mencionar que en estas posiciones se colocan neumáticos con
+mayor cocada que en las posiciones 5 y 6.
+DISTRIBUCIÓN DE CARGAS DEL VOLQUETE VACÍO- POR NEUMÁTICOS
+CAT 797F
+CAT 798AC
+KOMATSU 980E-4
+KOMATSU 980E-5
+50
+60
+70
+80
+90
+W3-W4
+W5-W6
+Δ = 2.24 t
+Δ = 6.97 t
+Δ = 2.63 t
+Δ = 11.85 t
+Δ = 6.72 t
+Δ = 5.00 t
+Δ = 3.80 t
+Δ = 6.33 t
+
+
+========================================
+PAGINA 15
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 15
+7.2.  FLOTA  DE MENOR CAPACIDAD DE TONELAJE
+DISTRIBUCIÓN DE CARGAS DEL VOLQUETE VACÍO- POR NEUMÁTICOS
+CAT 793D
+KOMATSU 930E
+KOMATSU 930E-4
+KOMATSU 930E-4SE
+30
+40
+50
+60
+70
+80
+W3-W4
+W5-W6
+DISTRIBUCIÓN DE CARGAS DEL VOLQUETE CARGADO- POR NEUMÁTICOS
+CAT 797F
+CAT 798AC
+KOMATSU 980E-4
+KOMATSU 980E-5
+160
+180
+200
+220
+240
+W3-W4
+W5-W6
+Figura 29. Análisis de distribución de peso en la posición 3&4 vs 5&6 vacío.
+Figura 28. Análisis de distribución de peso en la posición 3&4 vs 5&6 vacío.
+El desbalance mecionado anteriormente, en condición cargada, aumenta a 15 toneladas a favor de
+las posiciones 3 y 4. Los neumáticos 3 y 4 en promedio cargan 108 toneladas, por debajo del
+target de Michellin (109 toneladas). Sin embargo en una rampa positiva de 10% esa carga será
+10% más, llegando a 119 toneladas.
+En la flota Komatsu 930, en condición vacía, el desbalance hacía las posiciones 3 y 4 es en
+promedio 4.5 toneladas. En la flota CAT 793D la diferencia es de 3.5 toneladas.
+Δ = 18.44 t
+Δ = 11.86 t
+Δ = 11.01 t
+Δ = 14.80 t
+Δ = 3.48 t
+Δ = 4.76 t
+Δ = 4.13 t
+Δ = 4.93 t
+
+
+========================================
+PAGINA 16
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 16
+8. DISTRIBUCIÓN DE CARGA POR EJE
+DISTRIBUCIÓN DE CARGAS POR EJE EN VACÍO
+40%
+50%
+60%
+930E - 4SE
+798AC
+930E - 4
+793D
+930E
+930
+797F
+980E - 4
+980E - 5
+49.5%
+44.1%
+47.1%
+47.6%
+46.6%
+49.2%
+47.1%
+46.9%
+46.0%
+50.5%
+55.9%
+52.9%
+52.4%
+53.4%
+50.8%
+52.9%
+53.1%
+54.0%
+%Eje1
+%Eje2
+Target (50%)
+8.1.  ANÁLISIS POR FLOTA
+DISTRIBUCIÓN DE CARGAS DEL VOLQUETE CARGADO- POR NEUMÁTICOS
+CAT 793D
+KOMATSU 930E
+KOMATSU 930E-4
+KOMATSU 930E-4SE
+100
+150
+200
+W3-W4
+W5-W6
+Figura 31. Distribución por eje en vacío.
+Figura 30. Análisis de distribución de peso en la posición 3&4 vs 5&6 cargado.
+La flota Komatsu 980E-5 presenta un desbalance hacía el eje trasero debido a que todos sus
+volquetes tienen instalado liner de 15 toneladas en la tolva. En la flota Komatsu 980E-4 el
+desbalance se debe a que los volquetes V161, V162, V163 y V164 tienen instalado el mismo
+accesorio.
+En la flota Komatsu 930, en condición vacía, el desbalance mecionado hacía las posiciones es 3 y 4
+llega a 10 toneladas. Los neumáticos usados en esta flota son de tamaño 53/80R63, la carga
+soportada por las posiciones 3 y 4, individualmente llegan en promedio hasta 90 toneladas, por
+debajo del target de Michellin (92 toneladas).
+Δ = 12.63 t
+Δ = 8.49 t
+Δ = 9.58 t
+Δ = 4.92 t
+
+
+========================================
+PAGINA 17
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 17
+DISTRIBUCIÓN DE CARGAS POR EJE - CARGADO
+40%
+60%
+CAT 797F
+CAT 798AC
+CAT 793D
+KOMATSU
+930E-4SE
+KOMATSU
+930E-4
+KOMATSU
+930E
+KOMATSU
+980E-4
+KOMATSU
+980E-5
+35.7%
+32.2%
+33.6%
+34.8%
+33.3%
+35.6%
+34.1%
+33.5%
+64.3%
+67.8%
+66.4%
+65.2%
+66.7%
+64.4%
+65.9%
+66.5%
+%EJE 1
+%EJE 2
+Target Eje 1
+Target Eje 2
+8.2.  ANÁLISIS POR VOLQUETE
+FLOTA 797F
+DISTRIBUCIÓN DE CARGAS POR EJE - VACIO
+40%
+45%
+50%
+55%
+60%
+144
+147
+143
+131
+142
+133
+146
+136
+139
+145
+130
+138
+134
+137
+132
+140
+135
+141
+48.6%
+44.9%
+46.5%
+46.9%
+45.8%
+47.3%
+46.8%
+46.2%
+45.5%
+47.9%
+47.2%
+46.9%
+46.6%
+46.5%
+46.1%
+45.5%
+45.1%
+48.1%
+55.1%
+53.5%
+53.1%
+54.2%
+52.7%
+53.2%
+53.8%
+54.5%
+52.1%
+52.8%
+53.1%
+53.4%
+53.5%
+53.9%
+54.5%
+54.9%
+51.9%
+%REAL EJE 1
+%REAL EJE 2
+Target
+Los volquetes V144, V147, V143, V131,a diferencia del resto, presentan mayor distribución en el eje
+delantero debido a que tienen instalado parachoques de 2.45 toneladas. Los volquetes V141,
+V135 y V132 presentan mayor distribución en el eje posterior por contar con liner. El volquete V138
+presenta liner y parachoque.
+El carguío en la flota CAT 797F resultó en una distribución de 35.7% para el eje delantero, esto se
+traduce en más de 115 toneladas para cada neumático. En la ruta de pala P08 hacía el depósito
+DDD Cuajone se tiene una rampa negativa, en este tramo la carga en la posición 1 y 2 será mayor
+a 126 toneladas(+10%), esta condición genera fatiga y exceso de temperatura en los neumáticos.
+Figura 32. Distribución de peso por eje en cargado.
+Figura 33. Distribución de peso por eje en vacío.
+
+
+========================================
+PAGINA 18
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 18
+DISTRIBUCIÓN DE CARGAS POR FLOTA - CARGADO
+30%
+40%
+50%
+60%
+70%
+144
+131
+133
+143
+136
+138
+135
+147
+132
+134
+142
+146
+139
+130
+145
+140
+137
+141
+38.3%
+33.5%
+35.4%
+36.3%
+34.9%
+36.4%
+35.9%
+35.3%
+34.2%
+37.1%
+36.3%
+36.3%
+35.6%
+35.3%
+35.2%
+34.2%
+33.9%
+37.6%
+61.7%
+66.5%
+64.6%
+63.7%
+65.1%
+63.6%
+64.1%
+64.7%
+65.8%
+62.9%
+63.7%
+63.7%
+64.4%
+64.7%
+64.8%
+65.8%
+66.1%
+62.4%
+%REAL EJE 1
+%REAL EJE 2
+Target Eje 1
+Target Eje 2
+FLOTA CAT 798 AC
+Figura 35. Distribución de peso por eje en vacío.
+Figura 34. Distribución de peso por eje en condición de carga.
+DISTRIBUCIÓN POR EJE- VACIO
+11
+10
+49.7%
+48.6%
+50.3%
+51.4%
+%REAL EJE 1
+%REAL EJE 2
+Target
+DISTRIBUCIÓN POR EJE - CARGADO
+11
+10
+36.5%
+34.9%
+63.5%
+65.1%
+%REAL EJE 1
+%REAL EJE 2
+Target Eje 1
+Target Eje 2
+Figura 36. Distribución de peso por eje cargado.
+La distribución del peso en condición de carga en la flota CAT 797 F, en el eje delantero, fue mayor
+al target (33.33%). Se debe retroalimentar a los operadores de pala sobre la importancia del
+centrado de carga en el rendimiento de neumáticos. A partir de un 34.2% excedemos el límite carga
+de los neumáticos Michellin de tamaño 59/80R63.
+La distribución del peso en condición de carga en la flota CAT 798 AC, en el eje delantero, fue
+mayor al target (33.33%). El eje delantero del V11 (36.5%) soporta 231.7 ton, asumiendo una
+distrución uniforme, cada neumático del eje delantero soporta 115.9 toneladas, excediento el target
+de Michellin (109 ton).
+
+
+========================================
+PAGINA 19
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 19
+FLOTA KOMATSU 930E-4
+Figura 39. Distribución de peso por eje en vacío.
+DISTRIBUCIÓN POR EJE- VACIO
+114
+110
+107
+106
+112
+108
+111
+109
+113
+48.8%
+46.5%
+47.5%
+47.7%
+47.3%
+48.2%
+47.5%
+47.4%
+46.9%
+53.5%
+52.5%
+52.3%
+52.7%
+51.8%
+52.5%
+52.6%
+53.1%
+%REAL EJE 1
+%REAL EJE 2
+Target
+DISTRIBUCIÓN POR EJE - CARGADO
+114
+110
+106
+107
+108
+113
+112
+109
+111
+36.2%
+31.0%
+33.0%
+35.5%
+32.4%
+35.5%
+33.6%
+32.8%
+32.4%
+63.8%
+69.0%
+67.0%
+64.5%
+67.6%
+64.5%
+66.4%
+67.2%
+67.6%
+%REAL EJE 1
+%REAL EJE 2
+Target Eje 1
+Target Eje 2
+Figura 40. Distribución de peso por eje cargado.
+FLOTA KOMATSU 930E
+DISTRIBUCIÓN POR EJE - CARGADO
+101
+100
+105
+103
+34.4%
+32.3%
+33.6%
+33.8%
+65.6%
+67.7%
+66.4%
+66.2%
+%REAL EJE 1
+%REAL EJE 2
+Target Eje 1
+Target Eje 2
+Figura 38. Distribución de peso por eje en cargado.
+DISTRIBUCIÓN POR EJE- VACIO
+100
+101
+105
+103
+47.5%
+46.5%
+46.6%
+47.1%
+52.5%
+53.5%
+53.4%
+52.9%
+%REAL EJE 1
+%REAL EJE 2
+Target
+Figura 37. Distribución de peso por eje en vacío.
+Solo en el volquete V114, con una distribución de 36.2% en el eje delantero, se excede el límite de
+carga de Michellin en 1 tonelada, teniendo en cuenta que en vacío condición vacia, es el volquete
+con mayor distribución en el eje delantero.
+En la flota 930E el volquete con mayor % de peso en el eje delantero es el V101, esta distribución
+de carga de 34.4% significa un peso de al menos 89.1 toneladas en cada neumático, por debajo
+del target de Michellin (92 toneladas).
+
+
+========================================
+PAGINA 20
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 20
+FLOTA KOMATSU 980E-4
+Figura 43. Distribución de peso por eje en vacío.
+DISTRIBUCIÓN POR EJE- VACIO
+160
+165
+162
+163
+161
+164
+48.0%
+44.0%
+45.9%
+45.9%
+44.5%
+47.5%
+52.0%
+56.0%
+54.1%
+54.1%
+55.5%
+52.5%
+%REAL EJE 1
+%REAL EJE 2
+Target
+DISTRIBUCIÓN POR EJE - CARGADO
+163
+162
+164
+165
+160
+161
+34.1%
+32.4%
+33.1%
+33.2%
+33.0%
+33.4%
+65.9%
+67.6%
+66.9%
+66.8%
+67.0%
+66.6%
+%REAL EJE 1
+%REAL EJE 2
+Target Eje 1
+Target Eje 2
+Figura 44. Distribución de peso por eje cargado.
+FLOTA KOMATSU 930E-4SE
+DISTRIBUCIÓN POR EJE - CARGADO
+116
+115
+34.8%
+33.4%
+65.2%
+66.6%
+%REAL EJE 1
+%REAL EJE 2
+Target Eje 1
+Target Eje 2
+Figura 42. Distribución de peso por eje en cargado.
+DISTRIBUCIÓN POR EJE- VACIO
+115
+116
+50.1%
+49.0%
+49.9%
+51.0%
+%REAL EJE 1
+%REAL EJE 2
+Target
+Figura 41. Distribución de peso por eje en vacío.
+El exceso de +1.5% en la distribución de peso en el eje delantero del V116, no significa un exceso
+al límite de carga de Michellin. En conclusión, los neumáticos de tamaño 53/80 R63 instalados en la
+flota Komatsu 930E, E4, 4SE trabajan por debajo del límite de carga de Michellin.
+Los volquetes V162, V163, V161 y V164 tienen instalado un protector de goma en su tolva (liner),
+por esa razón, en condición vacía, tienen mayor distribución en el eje posterior a comparación del
+los volquetes V160 y V165.
+
+
+========================================
+PAGINA 21
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 21
+FLOTA CATERPILLAR 793D
+Figura 47. Distribución de peso por eje en vacío.
+DISTRIBUCIÓN POR EJE- VACIO
+121
+120
+47.5%
+46.7%
+52.5%
+53.3%
+%REAL EJE 1
+%REAL EJE 2
+Target
+DISTRIBUCIÓN POR EJE - CARGADO
+121
+120
+35.3%
+34.3%
+64.7%
+65.7%
+%REAL EJE 1
+%REAL EJE 2
+Target Eje 1
+Target Eje 2
+Figura 48. Distribución de peso por eje cargado.
+FLOTA KOMATSU 980E-5
+DISTRIBUCIÓN POR EJE - CARGADO
+166
+168
+167
+33.1%
+30.9%
+32.6%
+66.9%
+69.1%
+67.4%
+%REAL EJE 1
+%REAL EJE 2
+Target Eje 1
+Target Eje 2
+Figura 46. Distribución de peso por eje en cargado.
+DISTRIBUCIÓN POR EJE- VACIO
+166
+168
+167
+44.3%
+44.0%
+44.1%
+55.7%
+56.0%
+55.9%
+%REAL EJE 1
+%REAL EJE 2
+Target
+Figura 45. Distribución de peso por eje en vacío.
+No se observan diferencias significativas en distribución de peso en condición vacia, pues los 3
+volquetes presentan liner y el mismo modelo de tolva. En condición de carga, el volquete V167
+presenta un exceso de carga en el eje posterior, recalcando que fue cargado dos veces en la pala
+P08 con una distribución de 30% / 70%.
+En condición vacía, el volquete V120 presenta mayor distribución en el eje posterior debido a su
+tolva más pesada y cola más larga en comparación al V121. Cada neumático del eje delantero
+soporta al menos 67 toneladas, los neumáticos usados en esta flota son de tamaño 40.00 R57.
+
+
+========================================
+PAGINA 22
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 22
+9. PALEROS CON MAYOR EFICIENCIA EN EL CENTRADO DE CARGA
+Los operadores Oscar Pinedo, Efrain Huaypuna y Edil Valdivia, destacan con en la eficiencia de
+distribución de carga, en la siguiente tabla se muestra la distribución de carga de todos los
+operadores.
+Select or add data to populate this visual
+Figura 49. Ranking de operadores con mejor eficiencia en la distribución de carga.
+10. PAYLOAD VS TONELAJE VIMS/PLM
+El tonelaje de la pantalla VIMS en el volquete V11 es mayor en 1.6% que la carga real. En la flota
+CAT 793D, el volquete V121 el sistema VIMS marca un 4.4% menos respecto a la carga útil real. En
+caso del volquete V121 se debe inspeccionar las suspensiones.
+FLOTA CAT 798AC
+VOLQUETE
+10
+11
+376
+373
+366.67
+379.00
+0.34%
+1.61%
+Payload
+VIMS
+Variación (%)
+FLOTA CAT 793D
+VOLQUETE
+120
+121
+213
+204
+207.50
+195.50
+-2.88%
+-4.44%
+Payload
+VIMS
+Variación (%)
+Figura 50. Tonelaje VIMS vs Payload CAT 798AC
+Figura 51. Tonelaje VIMS vs Payload CAT793D
+
+
+========================================
+PAGINA 23
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 23
+FLOTA KOMATSU 930E
+103
+105
+101
+100
+306
+295
+293
+291
+319
+292
+294
+291
+3.32%
+-0.33%
+-1.12%
+0.26%
+Diferencia
+VIMS
+Variación (%)
+FLOTA CAT 797F
+VOLQUETES
+134
+136
+138
+133
+144
+132
+146
+130
+140
+135
+143
+137
+147
+142
+145
+131
+139
+141
+371
+371
+370
+363
+359
+356
+350
+350
+348
+346
+346
+344
+343
+342
+342
+342
+333
+331
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+0.73%
+2.04%
+-3.08%
+-1.67%
+-2.20%
+1.77%
+0.00%
+0.99%
+-0.80%
+-0.51%
+-0.89%
+-0.71%
+-1.93%
+-0.67%
+0.97%
+-2.32%
+Payload
+VIMS
+Variación (%)
+FLOTA KOMATSU 930E-4
+112
+108
+111
+109
+114
+107
+106
+110
+113
+291
+289
+288
+288
+288
+282
+281
+277
+276
+308
+306
+282
+278
+283
+272
+274
+273
+270
+5.64%
+-2.29%
+5.73%
+-3.85%
+-3.68%
+-1.88%
+-1.79%
+-2.29%
+-2.73%
+Payload
+VIMS
+Variación (%)
+FLOTA KOMATSU 930E
+115
+116
+289
+277
+309
+266
+6.36%
+-4.19%
+Diferencia
+VIMS
+Variación (%)
+El sistema Payload Meter en los volquetes Komatsu calcula la carga útil a partir de la presión de
+las suspensiones, la velocidad y la inclinación del equipo. El tonelaje mostrado en la pantalla de
+instrumención electrónica varía en más de 5% con respecto a la carga util en los volquetes V108,
+V112 y V115, en ocasiones la configuración del PLM está en toneladas cortas, por lo que se
+recomienda una inspección en esos volquetes
+Figura 53. Tonelaje VIMS vs Payload Komatsu 930E.
+Figura 52. Tonelaje VIMS vs Payload CAT 797F.
+
+
+========================================
+PAGINA 24
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 24
+FLOTA KOMATSU 980E-4
+165
+163
+164
+161
+160
+162
+356
+348
+344
+344
+338
+331
+380
+370
+376
+345
+349
+335
+6.24%
+1.11%
+8.51%
+0.26%
+3.04%
+5.71%
+Diferencia
+VIMS
+Variación (%)
+FLOTA KOMATSU 980E-4
+167
+168
+166
+351
+337
+315
+340
+349
+315
+-3.14%
+0.15%
+3.31%
+Diferencia
+VIMS
+Variación (%)
+En la flota Komatsu 980 la variación entre el tonelaje Payload Meter y el payload real varía en más
+de 5%, en los volquetes V163, V164 y V165, se recomienda verificar la configuración de unidades
+(Toneladas Cortas).
+Figura 54. Tonelaje VIMS vs Payload Komatsu 980E.
+
+
+========================================
+PAGINA 25
+========================================
+Power BI Desktop
+ÁREA: ENTRENAMIENTO MINA 
+Operaciones mina
+           
+Pag. 25
+11. CÁLCULO DEL PESO DEL PARACHOQUE
+El volquete V131 fue pesado 6 veces vacío, la primera vez se peso 3 veces sin el parachoque,
+posteriormente se instaló el parachoque el 15 de octubre del 2025, procediendose nuevamente
+con su pesaje 3 veces vacío. El primer pesaje fue con un 92.61% de combustible y el segundo a
+94%.
+12. CONCLUSIONES.
+PRIMER PESAJE:
+-> Parachoque (t) = Peso Total 2 - Peso Total 1 - Combustible 2 + Combustible 1 
+-> Parachoque (t) = 299.3 - 296.93 - 94% (T) + 92.61%(T)
+-> Parachoque (t) = 2.37 t - 1.39% (T)
+-> Parachoque (t) = 2.37 -1.39%x 2000gl x 3.22 kg/gl
+-> Parachoque (t) = 2.3 t
+Peso Total 1= Peso Vacío + Combustible 1
+•
+Peso Total 2= Peso Vacío + Combustible 2 + Parachoques 
+•
+1. El tonelaje añadido por la instación del parachoque en los volquetes CATERPILLAR 797F le
+añade 2.3 toneladas al eje delantero.
+2. El tonelaje añadido al eje posterior por la instación del liner en la flota KOMATSU 980E-4,
+significa un adicional de 15 toneladas.
+3. Los operadores de pala con mejor centrado de carga son Oscar Pinedo, Efrain Huaypuna y
+Edil Valdivia.
+4. En la flota CATERPILLAR 798 AC, el volquete V10 de tolva MP presenta 3 toneladas más de
+carga útil que el volquete V11 de tolva HE.
+5. En condición vacía, en las flotas CAT 797F y CAT 798AC existe un desbalance de más de 7
+toneladas entre los neumáticos del eje delantero, debido a la ubicación del tanque de combustible.
+6. En condición de carga, los neumáticos de posición 1 de la flota CAT 797F soporta más de 115
+toneladas, excediento el target de Michellin en el tamaño 59/80R63 (109 t).
+7. Se debe inspeccionar las suspensiones y/o las unidades de tonelajes del sistema Payloader
+Meter en los volquetes V108, V115, V112, V165, V163, V164 y V165.
+
+

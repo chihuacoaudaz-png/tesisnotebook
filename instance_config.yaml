@@ -1,0 +1,29 @@
+proyecto_config:
+  titulo_tesis: "Sistema agéntico basado en inteligencia artificial para el diseño asistido de perforación y voladura orientado al control de la sobrerotura en labores subterráneas de la U.E.A. Lincuna, 2026"
+  grado_academico: "Título Profesional de Ingeniero de Minas"
+  universidad: "Universidad Nacional de Ingeniería (UNI)"
+  facultad: "Facultad de Ingeniería Geológica, Minera y Metalúrgica (FIGMM)"
+  unidad_estudio:
+    empresa: "Compañía Minera Lincuna S.A."
+    operacion: "Subterránea mecanizada / semimecanizada"
+    labor_objetivo: "Cruceros y frentes de avance en roca tipo III-B / IV-A"
+    geometria_labor:
+      tipo: "Sección D (Baúl)"
+      ancho_m: 4.5
+      altura_m: 4.5
+      flecha_arco_fl_m: 1.25
+    geomecanica_frente:
+      rmr: 55.5
+      gsi: 50
+      rqd_pct: 60
+      ucs_mpa: 180.05
+      traccion_mpa: 12.15
+      densidad_roca_tm_m3: 2.7
+    linea_base:
+      sobrerotura_historica_pct: 34.36
+      sobrerotura_meta_pct: 5.0
+      costo_shotcrete_usd_m3: 516.58
+  criterio_calidad:
+    exhaustividad: "Máxima profundidad analítica y deductiva"
+    red_team_activo: true
+    allow_black_box_ml: false

@@ -1,0 +1,205 @@
+{
+  "holmberg_base": {
+    "labor": {
+      "seccion": "D (Baul)",
+      "ancho_m": 4.5,
+      "altura_m": 4.5,
+      "flecha_arco_m": 1.25,
+      "long_perforacion_m": 3.66,
+      "avance_esperado_m": 3.22
+    },
+    "alivio": {
+      "num_taladros": 1,
+      "diametro_mm": 102.0,
+      "diametro_eq_mm": 102.0
+    },
+    "corte_cuadrantes": [
+      {
+        "cuadrante": 1,
+        "burden_teorico_m": 0.21,
+        "burden_practico_m": 0.153,
+        "apertura_m": 0.216,
+        "taco_m": 0.45,
+        "long_carga_m": 3.208,
+        "q_kg_m": 0.925,
+        "cartuchos_por_taladro": 16,
+        "num_taladros": 4
+      },
+      {
+        "cuadrante": 2,
+        "burden_teorico_m": 0.379,
+        "burden_practico_m": 0.323,
+        "apertura_m": 0.609,
+        "taco_m": 0.45,
+        "long_carga_m": 3.208,
+        "q_kg_m": 0.925,
+        "cartuchos_por_taladro": 16,
+        "num_taladros": 4
+      },
+      {
+        "cuadrante": 3,
+        "burden_teorico_m": 0.633,
+        "burden_practico_m": 0.577,
+        "apertura_m": 1.246,
+        "taco_m": 0.45,
+        "long_carga_m": 3.208,
+        "q_kg_m": 0.925,
+        "cartuchos_por_taladro": 16,
+        "num_taladros": 4
+      },
+      {
+        "cuadrante": 4,
+        "burden_teorico_m": 0.896,
+        "burden_practico_m": 0.84,
+        "apertura_m": 2.069,
+        "taco_m": 0.45,
+        "long_carga_m": 3.208,
+        "q_kg_m": 0.925,
+        "cartuchos_por_taladro": 16,
+        "num_taladros": 4
+      }
+    ],
+    "arrastres": {
+      "num_taladros": 5,
+      "burden_teorico_m": 1.137,
+      "burden_practico_m": 0.889,
+      "espaciamiento_practico_m": 1.029,
+      "taco_m": 0.45,
+      "long_carga_fondo_m": 1.111,
+      "cartuchos_fondo": 5,
+      "long_carga_columna_m": 2.096,
+      "cartuchos_columna": 10,
+      "q_fondo_kg_m": 0.925,
+      "q_columna_kg_m": 0.647
+    },
+    "corona_precorte": {
+      "num_taladros": 9,
+      "presion_detonacion_pt_mpa": 2026.67,
+      "presion_efectiva_pte_mpa": 164.96,
+      "condicion_pte_le_ucs": true,
+      "ucs_roca_mpa": 180.05,
+      "espaciamiento_sc_m": 0.656,
+      "burden_teorico_btc_m": 0.82,
+      "burden_practico_bpc_m": 0.572,
+      "taco_m": 0.45,
+      "long_carga_m": 3.208,
+      "cartuchos_por_taladro": 10,
+      "qce_kg_m": 0.38
+    },
+    "hastiales": {
+      "num_taladros": 6,
+      "espaciamiento_sh_m": 0.656,
+      "burden_practico_bph_m": 0.572,
+      "taco_m": 0.45,
+      "long_carga_m": 3.208,
+      "cartuchos_por_taladro": 10,
+      "q_kg_m": 0.38
+    }
+  },
+  "auto_tajeo": {
+    "num_taladros_tajeo": 10,
+    "burden_practico_m": 0.75,
+    "espaciamiento_practico_m": 0.938,
+    "relacion_s_b": 1.25,
+    "taladros": [
+      {
+        "tipo": "Tajeo_Inferior",
+        "x_m": 1.312,
+        "y_m": 0.528,
+        "burden_m": 0.75,
+        "espaciamiento_m": 0.938,
+        "q_kg_m": 0.925
+      },
+      {
+        "tipo": "Tajeo_Inferior",
+        "x_m": 2.25,
+        "y_m": 0.528,
+        "burden_m": 0.75,
+        "espaciamiento_m": 0.938,
+        "q_kg_m": 0.925
+      },
+      {
+        "tipo": "Tajeo_Inferior",
+        "x_m": 3.188,
+        "y_m": 0.528,
+        "burden_m": 0.75,
+        "espaciamiento_m": 0.938,
+        "q_kg_m": 0.925
+      },
+      {
+        "tipo": "Tajeo_Superior",
+        "x_m": 1.312,
+        "y_m": 3.722,
+        "burden_m": 0.75,
+        "espaciamiento_m": 0.938,
+        "q_kg_m": 0.925
+      },
+      {
+        "tipo": "Tajeo_Superior",
+        "x_m": 2.25,
+        "y_m": 3.722,
+        "burden_m": 0.75,
+        "espaciamiento_m": 0.938,
+        "q_kg_m": 0.925
+      },
+      {
+        "tipo": "Tajeo_Superior",
+        "x_m": 3.188,
+        "y_m": 3.722,
+        "burden_m": 0.75,
+        "espaciamiento_m": 0.938,
+        "q_kg_m": 0.925
+      },
+      {
+        "tipo": "Tajeo_Lateral_Izq",
+        "x_m": 0.653,
+        "y_m": 1.608,
+        "burden_m": 0.75,
+        "espaciamiento_m": 0.938,
+        "q_kg_m": 0.925
+      },
+      {
+        "tipo": "Tajeo_Lateral_Der",
+        "x_m": 3.847,
+        "y_m": 1.608,
+        "burden_m": 0.75,
+        "espaciamiento_m": 0.938,
+        "q_kg_m": 0.925
+      },
+      {
+        "tipo": "Tajeo_Lateral_Izq",
+        "x_m": 0.653,
+        "y_m": 2.642,
+        "burden_m": 0.75,
+        "espaciamiento_m": 0.938,
+        "q_kg_m": 0.925
+      },
+      {
+        "tipo": "Tajeo_Lateral_Der",
+        "x_m": 3.847,
+        "y_m": 2.642,
+        "burden_m": 0.75,
+        "espaciamiento_m": 0.938,
+        "q_kg_m": 0.925
+      }
+    ]
+  },
+  "resumen_malla_total": {
+    "seccion_labor": "4.5 m x 4.5 m (Baul, fl=1.25m)",
+    "area_labor_m2": 19.04,
+    "longitud_perforacion_m": 3.66,
+    "volumen_roca_rotura_m3": 66.21,
+    "tonelaje_roca_t": 178.77,
+    "taladros_alivio": 1,
+    "taladros_corte_4_cuadrantes": 16,
+    "taladros_arrastre": 5,
+    "taladros_corona_precorte": 9,
+    "taladros_hastiales": 6,
+    "taladros_tajeo_ayudas": 10,
+    "total_taladros_cargados": 46,
+    "total_taladros_perforados": 47,
+    "total_explosivo_disparo_kg": 107.41,
+    "factor_potencia_kg_m3": 1.622,
+    "factor_potencia_kg_t": 0.601
+  }
+}

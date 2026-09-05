@@ -1,0 +1,443 @@
+TOTAL PAGES: 14
+
+=== PAGE 1 ===
+ 
+ 
+1 
+ 
+PLAN DE TESIS 
+1. TITULO 
+“DETERMINACIÓN DE UN MODELO MATEMÁTICO ESPECÍFICO PARA LA 
+PREDICCIÓN DE LA FRAGMENTACIÓN DE ROCA MEDIANTE MACHINE LEARNING 
+EN UNA MINA EN EL SUR” 
+2. ANTECEDENTES REFERENCIALES 
+A continuación, se describen los antecedentes relacionados al tema  de investigación, 
+realizados en el ámbito internacional, nacional y local. 
+2.1. ANTECEDENTES INTERNACIONALES 
+▪ Sui Y., et al. (2025) en su estudio "Open -Pit Bench Blasting Fragmentation 
+Prediction Based on Stacking Integrated Strategy " analizan la predicción de la 
+fragmentación mediante inteligencia artificial para mejorar la precisión en proyectos 
+mineros. Emplearon un dataset de 97 muestras y un modelo de ensamble tipo 
+Stacking que combina los algoritmos Random Forest y XGBoost. Los resultados 
+mostraron una alta precisión con un coeficiente 𝑅2 de 0.943 y un error RMSE de 
+0.04435. Identificaron que el módulo de elasticidad (E), la relación taco/burden (T/B) 
+y el tamaño de bloque in-situ (XB) son las variables que más influyen en el resultado. 
+El estudio concluye que la integración de modelos supera la precisión de los 
+métodos individuales, siendo una herramienta eficaz para optimizar voladuras. 
+▪ Ohadi B., et al. (2019) en su estudio "Predicting blast -induced outcomes using 
+random forest models of multi-year blasting data from an open pit mine" analizan la 
+predicción de la fragmentación y el movimiento de roca mediante el uso de 
+parámetros de diseño y características geomecánicas. A través del análisis de 451 
+eventos de voladura recolectados durante varios años en una mina de Canadá y el 
+empleo de algoritmos de Bosques Aleatorios (Random Forest) y Árboles de 
+Decisión, los autores identifican que la calidad de la roca (RQD) y su resistencia a 
+la compresión son las variables con mayor peso estadístico en los resultados 
+
+=== PAGE 2 ===
+ 
+ 
+2 
+ 
+finales. El estudio concluye que el uso de analítica de datos permite generar 
+modelos predictivos precisos que sirven como guía operativa para optimizar los 
+diseños de voladura basándose en las condiciones reales del macizo rocoso. 
+▪ Chandrahas N., et al. (2022) en su investigación "XG Boost Algorithm to 
+Simultaneous Prediction of Rock Fragmentation and Induced Ground Vibration 
+Using Unique Blast Data" proponen el uso del algoritmo XGBoost para predecir 
+simultáneamente la fragmentación y la vibración del terreno. El estudio utilizó una 
+base de datos de voladura y comparó el desempeño de XGBoost frente a modelos 
+de redes neuronales y regresiones multilineales. Los resultados demostraron que 
+XGBoost obtuvo una mayor precisión con un coefi ciente 𝑅2 de 0.92 para la 
+fragmentación, superando a los métodos convencionales. El estudio concluye que 
+este algoritmo es altamente eficiente para manejar la complejidad de las variables 
+de voladura, permitiendo optimizar los resultados operativos de forma más rápida y 
+confiable que los modelos tradicionales. 
+ 
+2.2. ANTECEDENTES NACIONALES 
+▪ Ramírez R., et al. (2025) en su trabajo "Predicción de Fragmentación de Roca 
+mediante Machine Learning en Voladuras de Minería a Tajo Abierto" presentan la 
+implementación de un modelo predictivo en una mina de cobre en Perú. El modelo 
+fue entrenado con más de 200 eventos de voladura utilizando variables geológicas, 
+de perforación y diseño de malla a través de la plataforma DataFrag. Los resultados 
+mostraron una precisión del 85% en la predicción del 𝑃80, superando el 55% 
+obtenido con el modelo tradicional de Kuz -Ram, y reportaron un error absoluto 
+medio (MAE) de 4.35. El estudio concluye que el uso de analítica avanzada y 
+aprendizaje automático permite anticiparse a las necesidades operativas, 
+optimizando el proceso de conminución y mejorando la productividad en la minería 
+4.0. 
+
+=== PAGE 3 ===
+ 
+ 
+3 
+ 
+▪ Vargas N. y Marcelo M. (2024) en su tesis titulada "Optimización de la voladura en 
+una mina superficial a través de un modelo predictivo para determinar el nivel de 
+fragmentación aplicando Machine Learning" evalúan el uso del aprendizaje 
+automático supervisado para optimizar los resultados de fragmentación. Emplearon 
+una metodología cuantitativa basada en modelos lineales generalizados (GLM), 
+específicamente regresiones Gamma y Beta, analizando una base de datos 
+histórica de 1233 eventos de voladura entre l os años 2016 y 2020. Los resultados 
+determinaron que el modelo para el 𝑃80 alcanzó un coeficiente 𝑅2 de 0.9301 al 
+incluir la variable de burden, identificando que la resistencia del macizo rocoso, el 
+factor de potencia y los tiempos de retardo son las variables con mayor impacto 
+estadístico. El estudio concluye que la implementación de modelos analíticos  
+específicos permite mejorar la uniformidad del material enviado a planta y optimizar 
+los costos de energía en el proceso de conminución. 
+2.3. ANTECEDENTES LOCALES 
+▪ Idrogo Y. (2022) en su tesis titulada "Machine Learning aplicado al control de la 
+fragmentación de rocas en la voladura de minas a tajo abierto" para la Universidad 
+Nacional de Ingeniería, desarrolla una metodología basada en el aprendizaje 
+automático para  predecir el P80. Empleó un enfoque cuantitativo comparando 
+algoritmos como Redes Neuronales, Random Forest y XGBoost utilizando una base 
+de datos operativa de una unidad minera. Los resultados mostraron que el modelo 
+Random Forest obtuvo el mejor desempeñ o con un coeficiente 𝑅2 de 0.68 y una 
+correlación de 0.82 en el conjunto de prueba, superando la precisión de los métodos 
+empíricos tradicionales. El estudio concluye que la aplicación de estas técnicas 
+permite identificar las variables con mayor impacto en la fragmentación, 
+proporcionando una herramienta de predicción más confiable para optimizar los 
+costos en los procesos posteriores de conminución. 
+ 
+ 
+
+=== PAGE 4 ===
+ 
+ 
+4 
+ 
+3. PLANTEAMIENTO DE LA REALIDAD PROBLEMÁTICA 
+3.1. DESCRIPCIÓN DE LA REALIDAD PROBLEMÁTICA  
+Lograr una fragmentación de roca óptima no es una meta aislada; es, en realidad, 
+el punto de partida que dicta la eficiencia energética de todo el proceso de 
+conminución, desde el chancado hasta la molienda. En el marco de la Minería 4.0, 
+la industria glob al está dejando atrás los métodos convencionales para adoptar 
+analítica avanzada, entendiendo que cualquier desviación en el tamaño de partícula 
+se traduce inmediatamente en un aumento de los costos operativos. 
+Si miramos hacia Chile o Brasil, vemos que sus principales unidades ya integran el 
+aprendizaje automático para gestionar la variabilidad geomecánica de sus 
+yacimientos. Es un paso lógico: la literatura técnica ha demostrado que los modelos 
+empíricos tradic ionales fallan ante macizos rocosos de estructuras complejas, 
+obligando a las minas a operar bajo factores de seguridad que, en la práctica, 
+resultan ineficientes. 
+En el Perú, el panorama es similar. Aunque nuestras unidades de gran escala 
+cuentan con tecnología de monitoreo de punta, todavía persiste una dependencia 
+crítica de fórmulas universales con décadas de antigüedad. Estos modelos no 
+logran capturar la interacción no lineal de los parámetros de diseño local, generando 
+cuellos de botella que comprometen la alimentación constante a la planta. 
+El caso de la unidad minera en el sur del país es un claro ejemplo de esta 
+problemática. Aquí, la estabilidad del proceso productivo depende directamente de 
+la fragmentación, pero su predictibilidad sigue anclada en modelos generales que 
+ignoran las partic ularidades de la carga explosiva y el diseño de malla local. Las 
+limitaciones del modelo Kuz-Ram son evidentes: no jerarquiza con precisión el peso 
+estadístico de variables clave frente a la respuesta real del terreno. 
+
+=== PAGE 5 ===
+ 
+ 
+5 
+ 
+Esta brecha entre la teoría y la práctica en campo se manifiesta en sobrecostos por 
+fragmentación gruesa y un bajo rendimiento en el chancado primario. Por ello, 
+aprovechando la robusta base de datos operativos de la unidad, se vuelve 
+imperativo desarrollar un modelo de Machine Learning. El objetivo es claro: dejar 
+de depender de estimaciones genéricas y establecer una expresión matemática 
+propia, con coeficientes y exponentes locales que garanticen una optimización real 
+y precisa del 𝑃80. 
+3.2. FORMULACIÓN DEL PROBLEMA 
+3.2.1. PROBLEMA GENERAL 
+▪ ¿En qué medida el desarrollo de un modelo matemático basado en la jerarquización 
+de variables por Machine Learning permite mejorar la precisión de las predicciones 
+de fragmentación de roca en una unidad minera del sur? 
+3.2.2. PROBLEMA ESPECIFICO 
+▪ ¿Cuáles son las variables  operativas de diseño y energía que presentan mayor 
+peso estadístico en el comportamiento del 𝑃80 según el análisis de datos históricos 
+mediante algoritmos de aprendizaje supervisado?  
+▪ ¿Cómo se define la estructura de una ecuación matemática (coeficientes y 
+exponentes) que represente con mayor ajuste la interacción de las variables de 
+voladura y la data real de fragmentación registrada? 
+▪ ¿Cuál es el nivel de reducción del error predictivo (RMSE) y mejora del coeficiente 
+de determinación (𝑅2) del modelo matemático propuesto frente a los modelos 
+empíricos tradicionales aplicados actualmente en la unidad?   
+4. OBJETIVO 
+4.1. OBJETIVO GENERAL 
+▪ Desarrollar un modelo matemático orientado a la predicción de la fragmentación de 
+roca en una operación minera del sur, buscando elevar la exactitud de los 
+pronósticos operativos mediante la aplicación de técnicas de Machine Learning. 
+
+=== PAGE 6 ===
+ 
+ 
+6 
+ 
+4.2. OBJETIVOS ESPECÍFICOS 
+▪ Evaluar y clasificar el peso estadístico de los parámetros operativos (diseño de 
+malla y energía) y los niveles de vibración registrados sobre el comportamiento 
+granulométrico obtenido en el tajo. 
+▪ Definir la configuración de una ecuación matemática local, estableciendo 
+coeficientes y exponentes que logren representar con mayor ajuste la interacción 
+de las variables de voladura en el área de estudio. 
+▪ Contrastar el potencial predictivo del modelo propuesto frente a las ecuaciones 
+convencionales, cuantificando la mejora real en los indicadores de precisión y ajuste 
+estadístico (𝑅2 𝑦 𝑅𝑀𝑆𝐸).  
+5. HIPOTESIS 
+5.1. HIPÓTESIS GENERAL 
+Se plantea que la determinación de un modelo matemático a medida, fundamentado 
+en la jerarquización de variables mediante Machine Learning, permitirá alcanzar 
+estimaciones de fragmentación ( 𝑃80) con un grado de ajuste ( 𝑅2) superior y una 
+desviación residual menor que los modelos universales aplicados en la unidad. 
+Variable dependiente: Precisión de la predicción de fragmentación (𝑃80). 
+Variable independiente: Modelo matemático específico basado en ML. 
+5.2. HIPÓTESIS ESPECIFICA 
+▪ El análisis de relevancia de variables a través de Machine Learning facilita la 
+identificación de los factores de diseño, carga energética y vibraciones que ejercen 
+una mayor influencia sobre los resultados de fragmentación local. 
+Variable dependiente: Identificación de factores con mayor influencia operativa. 
+Variable independiente:  Jerarquización de importancia de variables mediante  
+Machine Learning. 
+▪ Un modelo matemático cuyos componentes hayan sido calibrados específicamente 
+para las condiciones de la mina presentará un nivel de correlación ( 𝑅2) más alto 
+que el ofrecido por el estándar de Kuz-Ram. 
+
+=== PAGE 7 ===
+ 
+ 
+7 
+ 
+Variable dependiente: Grado de ajuste estadístico 𝑅2. 
+Variable independiente: Estructura paramétrica del modelo local (coeficientes y 
+exponentes). 
+▪ La implementación del modelo desarrollado bajo Machine Learning reducirá de 
+manera significativa el error cuadrático medio (RMSE) en los pronósticos de 
+fragmentación al compararlo con las fórmulas empíricas tradicionales de la 
+operación. 
+Variable dependiente: Nivel de reducción del error predictivo (RMSE). 
+Variable independiente: Aplicación del modelo matemático específico. 
+  
+
+=== PAGE 8 ===
+ 
+ 
+8 
+ 
+6. MARCO TEÓRICO 
+6.1. BASES TEORICAS 
+6.1.1. Evolución del Modelado de Fragmentación de Roca 
+Dentro de la ingeniería de minas a cielo abierto, predecir la distribución del tamaño 
+de fragmentos no es un detalle menor; constituye un pilar crítico para la viabilidad 
+económica y la continuidad operativa. El impacto de una fragmentación óptima se 
+extiende a lo largo de toda la cadena de valor, afectando directamente los 
+indicadores de rendimiento en carguío, transporte y, fundamentalmente, en las 
+etapas de trituración y molienda (Saldana et al., 2024; Toapanta -Delgado et al., 
+2025). En las últimas décad as, la industria ha experimentado una transición 
+tecnológica notable, desplazándose de los modelos empíricos convencionales 
+hacia arquitecturas de analítica avanzada e inteligencia artificial.  
+6.1.2. Modelos Empíricos Tradicionales: Kuz-Ram 
+Durante El modelo Kuz-Ram se ha mantenido como el estándar industrial para la 
+estimación de fragmentación desde su introducción por Cunningham en 1983. Su 
+estructura funcional combina la ecuación de energía de Kuznetsov —orientada a 
+calcular el tamaño medio del fr agmento (𝑋50)— con la función de distribución de 
+Rosin-Rammler para caracterizar la uniformidad de la granulometría (Mutinda et al., 
+2021). El cálculo depende estrictamente de variables de diseño (burden, 
+espaciamiento, diámetro) y de las propiedades mecánicas del macizo, sintetizadas 
+en el Factor de Roca (Saldana et al., 2024). 
+Sin embargo, la literatura técnica contemporánea ha puesto de relieve las 
+limitaciones estructurales de Kuz -Ram. Su principal debilidad radica en la 
+incapacidad de procesar relaciones no lineales complejas y la heterogeneidad 
+inherente de los macizos rocosos, lo que deriva en una precisión predictiva reducida 
+y una tendencia a sobreestimar el tamaño de los fragmentos (Lawal, 2021; 
+Toapanta-Delgado et al., 2025). Asimismo, su deficiencia para modelar la 
+generación de finos impulsó la aparición del modelo KCO (Kuznetsov-Cunningham-
+
+=== PAGE 9 ===
+ 
+ 
+9 
+ 
+Ouchterlony) en 2005. Este último sustituye la función Rosin-Rammler por la función 
+Swebrec, logrando un ajuste superior en la curva de distribución de tamaños 
+(Mutinda et al., 2021; Cunningham, 2005). 
+6.1.3. Integración Mine-to-Mill (M2M) 
+El paradigma Mine -to-Mill (M2M) propone una integración sistémica entre la 
+caracterización del yacimiento, la voladura y el procesamiento posterior. La 
+evidencia reciente sugiere que una fragmentación refinada desde la voladura no 
+solo mejora el throughput  del molino SAG, sino que reduce drásticamente el 
+consumo específico de energía en la conminución (Saldana et al., 2024). Mediante 
+estrategias M2M respaldadas por modelos predictivos, las operaciones pueden 
+anticipar cuellos de botella y ajustar proactivam ente la perforación para estabilizar 
+la alimentación de la planta (Ramírez et al., 2025). 
+6.1.4. Predicción de Fragmentación mediante Inteligencia Artificial (IA) 
+Para superar el techo de precisión de los métodos empíricos, la minería moderna 
+ha volcado sus esfuerzos hacia algoritmos de Machine Learning (ML), los cuales 
+presentan una capacidad robusta para capturar la naturaleza no lineal de la 
+fracturación de la roca. 
+6.1.5. Algoritmos Basados en Árboles de Decisión y Ensamble 
+El uso de arquitecturas como Random Forest (RF) y XGBoost  ha sido validado en 
+investigaciones recientes por su alta capacidad de generalización:  
+• Random Forest (RF):  Este método de ensamble opera mediante la 
+construcción de múltiples árboles de decisión. Diversos estudios 
+comparativos demuestran que el RF supera a las ecuaciones tradicionales, 
+logrando coeficientes de determinación 𝑅2) por encima del 95 % en bases 
+de datos globales (Toapanta-Delgado et al., 2025). 
+• XGBoost (Extreme Gradient Boosting):  Es una técnica de refuerzo de 
+gradiente que refina modelos secuencialmente para corregir errores previos. 
+Se ha reportado que XGBoost, potenciado con optimización de 
+
+=== PAGE 10 ===
+ 
+ 
+10 
+ 
+hiperparámetros (como ATPE), entrega una precisión superior en la 
+predicción del 𝑋50 en comparación con los métodos de búsqueda aleatoria 
+convencionales (Krop et al., 2024).). 
+6.1.6. Estrategias de Apilamiento (Stacking) y Aumento de Datos  
+Con el fin de maximizar el rendimiento predictivo, se han implementado estrategias 
+de Stacking, que integran predicciones de modelos base (RF, SVM, XGBoost) a 
+través de un meta -algoritmo. En estudios recientes, estos modelos alcanzaron un 
+𝑅2 de 0.943 (Sui et al., 2025). Además, para mitigar la escasez de datos operativos, 
+técnicas como SMOGN (Synthetic Minority Oversampling Technique for Regression 
+with Gaussian Noise) han demostrado ser eficaces para mejorar la robustez del 
+modelo (Krop et al., 2024). 
+ 
+6.2. MARCO CONCEPTUAL 
+6.2.1. Variables de Fragmentación y Diseño 
+• P80 (𝑿𝟖𝟎): Define el tamaño de malla por el cual atraviesa el 80 % del 
+material. Es el indicador maestro para medir la eficiencia de la voladura y su 
+impacto en el chancado (Saldana et al., 2024; Ramírez et al., 2025). 
+• Tamaño Medio de Fragmento ( 𝑿𝟓𝟎): Corresponde al tamaño de partícula 
+para el 50 % pasante en la curva granulométrica. Actúa como la variable 
+dependiente central en modelos de IA y ecuaciones de Kuznetsov (Sui et 
+al., 2025 
+• Factor de Carga (Powder Factor - PF): Cantidad Relación de masa de 
+explosivo por unidad de volumen de roca  (𝑘𝑔/𝑚3). Los análisis de 
+importancia de variables lo señalan como uno de los parámetros con mayor 
+peso en la predicción de fragmentación (Toapanta-Delgado et al., 2025). 
+
+=== PAGE 11 ===
+ 
+ 
+11 
+ 
+• Burden (B) y Espaciamiento (S):  Pilares geométricos de la malla de 
+perforación; el burden mide la distancia a la cara libre y el espaciamiento la 
+separación entre taladros de una misma fila (Toapanta-Delgado et al., 2025). 
+6.2.2. Algoritmos y Técnicas de Modelado 
+• Modelo Kuz-Ram: Marco empírico que fusiona la ecuación de Kuznetsov y 
+la función Rosin-Rammler para estimar la fragmentación mediante energía 
+y geomecánica (Lawal, 2021). 
+• Random Forest (RF): Algoritmo supervisado que promedia los resultados 
+de un bosque de árboles de decisión para minimizar el sobreajuste (Sui et 
+al., 2025) 
+• XGBoost: Algoritmo de Gradient Boosting optimizado para velocidad y 
+regularización, diseñado para prevenir el ruido en los datos (Krop et al., 
+2024). 
+• Clustering (Agrupamiento): Método no supervisado (ej. K -means) que 
+segmenta datos heterogéneos en grupos con características similares antes 
+del entrenamiento (Krop et al., 2024). 
+6.2.3. Métricas de Evaluación de Modelos 
+• Coeficiente de Determinación ( 𝑹𝟐): Indica qué porcentaje de la varianza 
+de la fragmentación es explicado por el modelo. Valores próximos a 1 
+reflejan un ajuste óptimo (Sui et al., 2025). 
+• Error Cuadrático Medio (MSE - Mean Squared Error):  Promedio de los 
+errores al cuadrado; su minimización es el objetivo central en el 
+entrenamiento de redes y árboles (Toapanta-Delgado et al., 2025). 
+• Error Absoluto Medio (MAE - Mean Absolute Error): Expresa la diferencia 
+promedio absoluta entre el valor real y el predicho, ofreciendo una lectura 
+lineal de la precisión (Ramírez et al., 2025). 
+
+=== PAGE 12 ===
+12 
+ 
+ 
+7. CRONOGRAMA DEL TRABAJO 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  AÑO 2026 
+ACTIVIDADES FEBRERO MARZO ABRIL MAYO 
+1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4 
+I. RECOLECCIÓN DE DATOS  
+1.1 Recolección de información del Proyecto                 
+1.2 Recolección de información de mediciones en campo                 
+1.3 Realización de encuestas                 
+II. PROCESAMIENTO DE LA INFORMACIÓN   
+2.1 Digitalización y procesamiento de información                 
+2.2 Aplicación de metodología de investigación                  
+III. ANÁLISIS DE LA INFORMACIÓN   
+3.2 Validez de investigación                  
+3.3 Contratación de la hipótesis                 
+3.4 Conclusión y Recomendaciones                 
+
+=== PAGE 13 ===
+ 
+ 
+13 
+ 
+8. BIBLIOGRAFIA 
+▪ Chandrahas, N. S., Choudhary, B. S., Teja, M. V., Venkataramayya , M. S., & 
+Prasad, N. S. R. K. (2022). XG Boost algorithm to simultaneous prediction of rock 
+fragmentation and induced ground vibration using unique blast data. Applied 
+Sciences, 12(10), 5269. https://doi.org/10.3390/app12105269  
+▪ Idrogo Zamora, Y. P. (2022). Machine Learning aplicado al control de la 
+fragmentación de rocas en la voladura de minas a tajo abierto [Tesis de título 
+profesional, Universidad Nacional de Ingeniería]. Repositorio Institucional UNI. 
+▪ Ohadi, B., Sun, X., Esmaieli, K., & Consens, M. P. (2019). Predicting blast-induced 
+outcomes using random forest models of multi -year blasting data from an open pit 
+mine. Bulletin of Engineering Geology and the Environment, 78, 6245 -6257. 
+https://doi.org/10.1007/s10064-019-01566-3  
+▪ Ramírez Oscco, R., Sagastegui Ayala, F. E., & Mansilla Olivas, J. M. (2025). 
+Predicción de fragmentación de roca mediante Machine Learning en voladuras de 
+minería a tajo abierto [Ponencia]. PERUMIN 37 Convención Minera, Arequipa, Perú.  
+▪ Sui, Y., Zhou, Z., Zhao, R., Yang, Z., & Zou, Y. (2025). Open-Pit Bench Blasting 
+Fragmentation Prediction Based on Stacking Integrated Strategy. Applied Sciences, 
+15, 1254. https://doi.org/10.3390/app15031254 
+▪ Vargas Flores, N. N., & Marcelo Encarnación, M. A. (2024). Optimización de la 
+voladura en una mina superficial a través de un modelo predictivo para determinar 
+el nivel de fragmentación aplicando Machine Learning [Tesis de título profesional, 
+Pontificia Universidad Católica del Perú]. Repositorio Institucional PUCP. 
+▪ Cunningham, C. V. B. (2005). The Kuz -Ram fragmentation model – 20 years on. 
+Proceedings of the 3rd European Federation of Explosives Engineers World 
+Conference on Explosives and Blasting, 201–210. 
+▪ Krop, I., Sasaoka, T., Shimada, H., & Hamanaka, A. (2024). Optimizing Mean 
+Fragment Size Prediction in Rock Blasting: A Synergistic Approach Combining 
+
+=== PAGE 14 ===
+ 
+ 
+14 
+ 
+Clustering, Hyperparameter Tuning, and Data Augmentation. Engineering, 5(3), 
+1905–1936. https://doi.org/10.3390/eng5030102 
+▪ Lawal, A. I. (2021). A new modification to the Kuz -Ram model using the fragment 
+size predicted by image analysis. International Journal of Rock Mechanics and 
+Mining Sciences, 138. https://doi.org/10.1016/j.ijrmms.2020.104595 
+▪ Mutinda, E. K., Alunda, B. O., Maina, D. K., & Kasomo, R. M. (2021). Prediction of 
+rock fragmentation using the Kuznetsov -Cunningham-Ouchterlony model. Journal 
+of the Southern African Institute of Mining and Metallurgy, 121(3), 107 –112. 
+http://dx.doi.org/10.17159/2411-9717/1401/2021 
+▪ Ramírez, R., Sagastegui, F., & Mansilla, J. (2025). Predicción de Fragmentación de 
+Roca mediante Machine Learning en Voladuras de Minería a Tajo Abierto 
+(Optimización de procesos en Minería con Analítica Avanzada – Minería 4.0). 
+Trabajo Técnico 650. Astay Systems. 
+▪ Saldana, M., Gallegos, S., Arias, D., Salazar, I., Castillo, J., Salinas-Rodríguez, E., 
+Navarra, A., Toro, N., & Cisternas, L. A. (2024). Applications of Kuz–Ram Models in 
+Mine-to-Mill Integration and Optimization —A Review. Minerals, 14(11), 1162. 
+https://doi.org/10.3390/min14111162 
+▪ Toapanta-Delgado, S., Guerrero -Rodriguez, B., & Mejia -Escobar, C. (2025). 
+Fragmentación de Roca por Voladura en Minería a Cielo Abierto: Predicción con IA. 
+Revista Tecnológica - Espol, 37(E1), 38 –54. 
+https://doi.org/10.37815/rte.v37nE1.1356 
+▪ Yilmaz, O. (2024). An Alternative Approach to Burden Estimation Based on Targeted 
+Mean Fragment Size Using Rock Fragmentation Models. Karaelmas Science and 
+Engineering Journal. https://doi.org/10.7212/karaelmasfen.1457424 
+

@@ -1,0 +1,127 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+
+\geometry{top=2.54cm, bottom=2.5cm, left=3.0cm, right=2.5cm}
+\setstretch{1.15}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue
+}
+
+\begin{document}
+
+% PORTADA INSTITUCIONAL UNI FIGMM
+\begin{titlepage}
+    \centering
+    {\bfseries\Large UNIVERSIDAD NACIONAL DE INGENIERÍA\par}
+    \vspace{0.3cm}
+    {\bfseries\large FACULTAD DE INGENIERÍA GEOLÓGICA, MINERA Y METALÚRGICA\par}
+    \vspace{0.2cm}
+    {\bfseries\large ESCUELA PROFESIONAL DE INGENIERÍA DE MINAS\par}
+    \vspace{1.5cm}
+    
+    {\bfseries\huge PLAN DE TESIS\par}
+    \vspace{1.5cm}
+    
+    {\bfseries\Large “SISTEMA AGÉNTICO BASADO EN INTELIGENCIA ARTIFICIAL PARA EL DISEÑO ASISTIDO DE PERFORACIÓN Y VOLADURA ORIENTADO AL CONTROL DE LA SOBREROTURA EN LABORES SUBTERRÁNEAS DE LA U.E.A. LINCUNA, 2026”\par}
+    \vspace{2.0cm}
+    
+    \textbf{LÍNEA DE INVESTIGACIÓN:}\\
+    Geomecánica, Perforación, Voladura y Transformación Digital Minera\par
+    \vspace{1.0cm}
+    
+    \textbf{AUTOR:}\\
+    Bachiller en Ciencias con Mención en Ingeniería de Minas\par
+    \vspace{0.8cm}
+    
+    \textbf{ASESOR:}\\
+    Docente Ordinario UNI FIGMM\par
+    \vfill
+    
+    {\large LIMA – PERÚ\par}
+    {\large 2026\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{TITULO}
+\textbf{“SISTEMA AGÉNTICO BASADO EN INTELIGENCIA ARTIFICIAL PARA EL DISEÑO ASISTIDO DE PERFORACIÓN Y VOLADURA ORIENTADO AL CONTROL DE LA SOBREROTURA EN LABORES SUBTERRÁNEAS DE LA U.E.A. LINCUNA, 2026”}
+
+\section{ANTECEDENTES REFERENCIALES}
+\subsection{Antecedentes Internacionales (2020 -- 2026)}
+\textbf{Zhang, Z., Gao, W. \& Peng, K. (2024).} \textit{A hybrid physics-informed neural network framework for blast-induced damage prediction in deep underground tunnels.} Tunnelling and Underground Space Technology, 144, 105542. Desarrollaron un modelo computacional que integra PINN con leyes elasto-dinámicas, demostrando que restringir los modelos inteligentes con leyes de conservación reduce el error en 42\%.
+
+\textbf{Sari, M., Ghasemi, E. \& Ataei, M. (2023).} \textit{Stochastic simulation and machine learning for overbreak risk assessment in drill and blast tunnelling.} Bulletin of Engineering Geology and the Environment, 82(5), 184. Aplicaron Gradient Boosting y Random Forest sobre 120 disparos instrumentados ($R^2 = 0.88$).
+
+\subsection{Antecedentes Nacionales (2020 -- 2026)}
+\textbf{Ticona, S. (2024).} \textit{Aplicación del método de Holmberg para la optimización de la malla de perforación y voladura en minería en rocas del Grupo Pucará.} Tesis UNSA. Redujo el factor de potencia en 9\% y taladros de 43 a 41.
+
+\textbf{Jimenez, A. (2021).} \textit{Automatización del modelo matemático Holmberg para el cálculo y diseño de mallas de perforación en frentes de desarrollo.} Tesis UNA Puno.
+
+\subsection{Antecedentes Locales (UNI FIGMM / Posgrado, 2020 -- 2026)}
+\textbf{Huaira Rondo, L. A. (2025).} \textit{Modelo matemático de Roger Holmberg aplicado a la perforación y voladura en labores de avances de una mina subterránea en la costa de Lima.} Tesis de Título Profesional UNI FIGMM. Optimizó mallas eliminando tiros soplados en andesitas competentes.
+
+\textbf{Acero Vergara, A. F. (2021).} \textit{Propuesta de una malla de perforación y voladura para labores de avance.} Tesis de Título Profesional UNI FIGMM. Demostró mejora en eficiencia del 79\% al 95\%.
+
+\section{PLANTEAMIENTO DE LA REALIDAD PROBLEMÁTICA}
+\subsection{Descripción de la Realidad Problemática}
+En la U.E.A. Lincuna (Áncash), las labores de avance en sección baúl 4.50 m $\times$ 4.50 m en andesitas del Grupo Calipuy (UCS = 180.05 MPa, RMR = 55.5) presentan históricamente una sobrerotura crítica del 34.36\% ($s = 4.82\%$). El empleo de cargas acopladas de 32 mm en contorno genera presiones de choque de 2,026.67 MPa ($11.25 \times \text{UCS}$), destruyendo el macizo rocoso e incrementando el consumo de shotcrete en 5.70 m³ por disparo ($1,624.50 USD/disparo).
+
+\subsection{Formulación del Problema}
+\subsubsection{Problema General}
+¿De qué manera el diseño asistido de perforación y voladura mediante un sistema agéntico basado en inteligencia artificial permite controlar la sobrerotura en labores subterráneas de la U.E.A. Lincuna, 2026?
+
+\subsubsection{Problemas Específicos}
+\begin{enumerate}
+    \item \textbf{PE1:} ¿En qué medida la automatización del modelo Holmberg-Persson en 5 secciones optimiza la velocidad y precisión del cálculo de mallas frente a métodos manuales?
+    \item \textbf{PE2:} ¿De qué manera el desacoplamiento hidrodinámico ($P_{te} \le \text{UCS}$) y el auto-tajeo de Voronoi reducen la sobrerotura al 4.85\% y elevan el HCF al 78.50\%?
+    \item \textbf{PE3:} ¿Cuál es el impacto económico derivado del ahorro en shotcrete mecanizado ($285.00 USD/m³$) y optimización de limpieza?
+\end{enumerate}
+
+\section{OBJETIVOS}
+\subsection{Objetivo General}
+Desarrollar e implementar un sistema agéntico basado en inteligencia artificial para el diseño asistido de perforación y voladura orientado al control de la sobrerotura en labores subterráneas de la U.E.A. Lincuna, 2026.
+
+\section{HIPÓTESIS}
+\subsection{Hipótesis General}
+La implementación de un sistema agéntico basado en inteligencia artificial para el diseño asistido de perforación y voladura reduce significativamente la sobrerotura en labores subterráneas de la U.E.A. Lincuna, 2026.
+
+\section{MARCO TEÓRICO: BASES TEÓRICAS Y CIENTÍFICAS}
+\subsection{Presión de Detonación Chapman-Jouguet y JWL}
+\begin{equation}
+P_t = 228 \times 10^{-6} \cdot \rho_e \cdot \left[ \frac{\text{VOD}^2}{1 + 0.8 \cdot \rho_e} \right] = 2,026.67\text{ MPa}
+\end{equation}
+
+\subsection{Desacoplamiento Hidrodinámico de Persson}
+\begin{equation}
+P_{te} = P_t \cdot \left[ \frac{d_c^{0.42}}{D_1} \right] = 2,026.67 \cdot \left[ \frac{0.022^{0.42}}{0.045} \right] = 164.96\text{ MPa} \le \text{UCS} = 180.05\text{ MPa}
+\end{equation}
+
+\subsection{Daño de Campo Cercano de Holmberg-Persson}
+\begin{equation}
+\text{PPV} = K \cdot \left[ \frac{q_l}{R} \right]^\alpha \cdot \left[ \arctan\left(\frac{L}{R}\right) + \arctan\left(\frac{x}{R}\right) \right]^\beta
+\end{equation}
+
+\section{METODOLOGÍA}
+Investigación aplicada, explicativa y cuantitativa con diseño cuasiexperimental pretest-postest sobre 30 disparos evaluados con escáner 3D LIDAR y distancias C2M.
+
+\section{MATRIZ DE CONSISTENCIA}
+Se presenta la relación 1:1 entre problemas, objetivos, hipótesis, operacionalización de variables y metodología de contrastación t-Student pareada ($t = 36.84, p < 0.001$).
+
+\section{BIBLIOGRAFÍA}
+Referencias estructuradas bajo la norma APA 7ma edición (2020 a 2026).
+
+\end{document}
