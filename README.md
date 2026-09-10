@@ -77,6 +77,8 @@ Ubicados en [`.agents/agents/`](.agents/agents/) y [`.gemini/agents/`](.gemini/a
 
 | Subagente | Rol y Responsabilidad |
 | :--- | :--- |
+| **`auditor_cumplimiento`** | Auditor imparcial y riguroso de prompts, directivas, enlaces a Drive y notas de NotebookLM. |
+| **`agente_drive_notebooklm`** | Especialista en integración y sincronización de Google Drive (Playwright) y Google NotebookLM (MCP/Deep Research). |
 | **`Teorico`** | Redactor de bases teóricas y definiciones conceptuales. Consulta exclusivamente a Google NotebookLM y aplica normas de deducción científica. |
 | **`InvestigadorTeorico`** | Especialista en búsqueda e ingesta de artículos en Scopus / Web of Science mediante NotebookLM Deep Research. |
 | **`agente_auditor_plan_uni`** | Auditor de conformidad metodológica. Valida el cumplimiento del estándar UNI FIGMM y la metodología de la Dra. Rosario Martínez. |
@@ -116,25 +118,37 @@ Se recomienda utilizar un entorno virtual de Python 3.10 o superior:
 python -m venv venv
 venv\Scripts\activate      # En Windows
 pip install -r requirements.txt
+playwright install chromium
 ```
 
-### 3. Autenticar Google NotebookLM (Fuente de Verdad)
-Para habilitar la sincronización con los cuadernos científicos:
+### 3. Autenticar Sesión Google (NotebookLM + Drive)
+Para habilitar la sincronización con los cuadernos científicos y Google Drive:
 ```bash
 notebooklm login
 ```
-*Esto abrirá una ventana de Chrome para conectar tu cuenta de Google. Una vez iniciada sesión, las credenciales se guardarán automáticamente.*
+*Esto abrirá una ventana de Chromium para conectar tu cuenta de Google (`chihuacoaudaz@gmail.com`). Una vez iniciada sesión, las credenciales se guardarán automáticamente en `~/.notebooklm/profiles/default/storage_state.json`.*
 
 ### 4. Cuadernos Oficiales del Proyecto
 * **Cuaderno de Metodología de Posgrado:** `Marco Metodologico de Posgrado UNI FIGMM - Dra. Rosario Martinez` (`769227ea-9b15-4fbc-a382-b14cd5e7435f`).
-* **Cuaderno Técnico de la Tesis:** `Tesis: Q-System Barton y Monitoreo de Vibraciones para Sostenimiento Dinamico` (`772eae6c-564b-4430-826e-8d3b8d14dcb4`).
+* **Cuaderno Núcleo Tesis Lincuna 2026:** `Tesis: Sistema Agentico de P&V y Control de Sobrerotura - Minera Lincuna 2026` (`780ac1ad-e15b-4801-be5e-44131370dfbc`).
+* **Cuaderno Histórico Geomecánica:** `Tesis: Q-System Barton y Monitoreo de Vibraciones para Sostenimiento Dinamico` (`772eae6c-564b-4430-826e-8d3b8d14dcb4`).
 
 Para consultar el cuaderno desde la consola:
 ```bash
-notebooklm ask "Sintetiza la respuesta del sostenimiento dinámico D-Bolt ante vibraciones PPV" -n 772eae6c-564b-4430-826e-8d3b8d14dcb4
+notebooklm ask "¿Cuáles son los 8 ítems normativos del Plan de Tesis Formato 1?" -n 769227ea-9b15-4fbc-a382-b14cd5e7435f
 ```
 
-### 5. Compilar el Documento Final en Word y PDF
+### 5. Carga y Sincronización con Google Drive
+Para subir las 25 tesis del benchmark a la carpeta `AGENTE TESIS/TESIS PARA SCRAPEAR INDICE` utilizando la sesión de Playwright (evitando errores OAuth 403 `restricted_client`):
+```bash
+python src/tools/upload_theses_to_drive.py
+# O para archivos arbitrarios:
+python src/tools/drive_uploader.py --dir "data/scraped_theses" --pattern "*.pdf"
+```
+
+> 📖 Para una guía exhaustiva de despliegue en cualquier PC de trabajo, consulta la [**Guía Maestra de Portabilidad y Despliegue**](docs/GUIA_PORTABILIDAD_Y_DESPLIEGUE.md).
+
+### 6. Compilar el Documento Final en Word y PDF
 Para compilar el Marco Teórico con ecuaciones nativas OMML (Cambria Math) y verificar las 21 páginas físicas:
 ```bash
 python src/skills/build_marco_teorico_docx_final.py

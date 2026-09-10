@@ -1,0 +1,1 @@
+{"name":"notebook_create","description":"Create a new notebook with the given title.","parameters":{"additionalProperties":false,"properties":{"title":{"type":"string"}},"required":["title"],"type":"object"}}

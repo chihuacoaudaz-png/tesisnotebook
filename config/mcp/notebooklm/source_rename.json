@@ -1,0 +1,1 @@
+{"name":"source_rename","description":"Rename a source. Accepts a notebook/source name or ID.","parameters":{"additionalProperties":false,"properties":{"new_title":{"type":"string"},"notebook":{"type":"string"},"source":{"type":"string"}},"required":["notebook","source","new_title"],"type":"object"}}

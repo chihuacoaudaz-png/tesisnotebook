@@ -1,0 +1,1 @@
+{"name":"notebook_rename","description":"Rename a notebook. Accepts a notebook name or ID.","parameters":{"additionalProperties":false,"properties":{"new_title":{"type":"string"},"notebook":{"type":"string"}},"required":["notebook","new_title"],"type":"object"}}
