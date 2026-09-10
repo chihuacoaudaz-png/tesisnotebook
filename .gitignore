@@ -74,9 +74,15 @@ $RECYCLE.BIN/
 scratch/
 .tempmediaStorage/
 
-# Sensitive local auth files (NotebookLM sessions)
+# Sensitive local auth files (NotebookLM sessions, Drive tokens)
 *storage_state.json
 *browser_profile/
+*drive_token.json
+*client_secret*.json
+temp_cookies*.db
 
 # Microsoft Office lock files
 ~$*
+
+# Large scraped PDFs directory
+data/scraped_theses/
